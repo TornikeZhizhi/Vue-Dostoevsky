@@ -19,6 +19,7 @@ a {
 html, body {
   height: 100%; 
    background:transparent !important; 
+   padding-top:54px;
 }
 @font-face {
   font-family: 'Conv_bebas-neue-regular';
@@ -1893,6 +1894,7 @@ audio {
   position: fixed;
   top: 0;
   left: 0;
+  width:100%;
   z-index: 2000; }
   .header_fluid .container {
     max-width: 1250px; }
@@ -1900,18 +1902,18 @@ audio {
 .main_fluid {
   height: 100%;
   padding-top: 72px; }
-  .main_fluid .char_col .char_container {
+   .char_col .char_container {
     padding: 40px 110px;
     padding-bottom: 130px;
     border-radius: 10px; }
-    .main_fluid .char_col .char_container h2 {
+     .char_col .char_container h2 {
       font-weight: bold;
       cursor: pointer;
       font-family: 'Conv_bebas-neue-bold';
       margin-bottom: 55px; }
-      .main_fluid .char_col .char_container h2 a {
+       .char_col .char_container h2 a {
         color: #fff; }
-      .main_fluid .char_col .char_container h2:after {
+       .char_col .char_container h2:after {
         content: "";
         display: block;
         width: 100%;
@@ -1923,12 +1925,12 @@ audio {
         top: 134px;
         left: 1px;
         border-radius: 50%; }
-    .main_fluid .char_col .char_container #demos {
+     .char_col .char_container #demos {
       border-radius: 10px; }
-      .main_fluid .char_col .char_container #demos .owl-carousel {
+       .char_col .char_container #demos .owl-carousel {
         position: relative;
         border-radius: 10px; }
-        .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav {
+         .char_col .char_container #demos .owl-carousel .owl-nav {
           border-radius: 10px;
           position: absolute;
           width: 100%;
@@ -1937,7 +1939,7 @@ audio {
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
           margin-top: 0px; }
-          .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev {
+           .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev {
             background-image: url("../images/left-arrow-brown-hi.png");
             width: 57px;
             height: 47px;
@@ -1955,13 +1957,13 @@ audio {
             -webkit-transition: 1s;
             -o-transition: 1s;
             transition: 1s; }
-            .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev:hover {
+             .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev:hover {
               background-color: unset;
               outline: none;
               opacity: 1; }
-            .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev span {
+             .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev span {
               display: none; }
-          .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-next {
+           .char_col .char_container #demos .owl-carousel .owl-nav .owl-next {
             background-image: url("../images/left-arrow-brown-hi.png");
             width: 57px;
             height: 47px;
@@ -1979,30 +1981,30 @@ audio {
             -o-transition: .1s;
             transition: .1s;
             opacity: .5; }
-            .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-next:hover {
+             .char_col .char_container #demos .owl-carousel .owl-nav .owl-next:hover {
               background-color: unset;
               outline: none;
               opacity: 1; }
-            .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-next span {
+             .char_col .char_container #demos .owl-carousel .owl-nav .owl-next span {
               display: none; }
-        .main_fluid .char_col .char_container #demos .owl-carousel .owl-dots {
+         .char_col .char_container #demos .owl-carousel .owl-dots {
           position: absolute;
           left: 50%;
           -webkit-transform: translateX(-50%);
           -ms-transform: translateX(-50%);
           transform: translateX(-50%);
           margin-top: 35px; }
-          .main_fluid .char_col .char_container #demos .owl-carousel .owl-dots button {
+           .char_col .char_container #demos .owl-carousel .owl-dots button {
             outline: none; }
-          .main_fluid .char_col .char_container #demos .owl-carousel .owl-dots span {
+           .char_col .char_container #demos .owl-carousel .owl-dots span {
             width: 15px;
             height: 15px; }
-        .main_fluid .char_col .char_container #demos .owl-carousel .item {
+         .char_col .char_container #demos .owl-carousel .item {
           width: 200px;
           height: 281px;
           overflow: hidden;
           border-radius: 10px; }
-          .main_fluid .char_col .char_container #demos .owl-carousel .item img {
+           .char_col .char_container #demos .owl-carousel .item img {
             width: 100%;
             height: 100%;
             -o-object-fit: cover;
@@ -2012,19 +2014,19 @@ audio {
             -webkit-transition: .3s;
             -o-transition: .3s;
             transition: .3s; }
-            .main_fluid .char_col .char_container #demos .owl-carousel .item img:hover {
+             .char_col .char_container #demos .owl-carousel .item img:hover {
               transform: scale(1.1); }
-  .main_fluid .bio_coll {
+   .bio_coll {
     padding-left: 0px;
     padding-right: 0px; }
-    .main_fluid .bio_coll .bio_img_col {
+     .bio_coll .bio_img_col {
       padding: 70px 0; }
-      .main_fluid .bio_coll .bio_img_col .bio_img {
+       .bio_coll .bio_img_col .bio_img {
         width: 441px;
         height: 651px;
         border-radius: 45px;
         overflow: hidden; }
-        .main_fluid .bio_coll .bio_img_col .bio_img img {
+         .bio_coll .bio_img_col .bio_img img {
           width: 100%;
           height: 100%;
           -webkit-clip-path: polygon(0 18%, 0 0, 35% 0%, 65% 0%, 100% 0, 100% 21%, 100% 100%, 99% 100%, 73% 100%, 35% 100%, 0 100%, 0 52%);
@@ -2033,7 +2035,7 @@ audio {
           -o-transition: .4s;
           transition: .4s;
           cursor: pointer; }
-  .main_fluid .bio_info_col {
+   .bio_info_col {
     padding: 70px 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2041,40 +2043,40 @@ audio {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-    .main_fluid .bio_info_col .bio_container {
+     .bio_info_col .bio_container {
       width: 441px;
       height: 651px;
       text-align: center; }
-      .main_fluid .bio_info_col .bio_container h2 {
+       .bio_info_col .bio_container h2 {
         font-size: 34px;
         margin: 30px 0;
         color: #fff;
         margin-top: 0;
         font-family: 'Conv_bebas-neue-bold';
         user-select: none; }
-      .main_fluid .bio_info_col .bio_container .chilhood {
+       .bio_info_col .bio_container .chilhood {
         margin: 30px 0; }
-        .main_fluid .bio_info_col .bio_container .chilhood h3 {
+         .bio_info_col .bio_container .chilhood h3 {
           font-family: 'Conv_bebas-neue-bold';
           color: #ebc076;
           user-select: none; }
-        .main_fluid .bio_info_col .bio_container .chilhood p, .main_fluid .bio_info_col .bio_container .chilhood span {
+         .bio_info_col .bio_container .chilhood p,  .bio_info_col .bio_container .chilhood span {
           font-size: 14px;
           color: #fff;
           opacity: .8;
           font-family: 'Conv_bpg_nino_medium_caps' !important; }
-      .main_fluid .bio_info_col .bio_container .ed_carr {
+       .bio_info_col .bio_container .ed_carr {
         margin: 30px 0; }
-        .main_fluid .bio_info_col .bio_container .ed_carr h3 {
+         .bio_info_col .bio_container .ed_carr h3 {
           font-family: 'Conv_bebas-neue-bold';
           color: #ebc076;
           user-select: none; }
-      .main_fluid .bio_info_col .bio_container .home_bio_wrapper {
+       .bio_info_col .bio_container .home_bio_wrapper {
         overflow-y: scroll;
         height: 170px; }
-        .main_fluid .bio_info_col .bio_container .home_bio_wrapper::-webkit-scrollbar {
+         .bio_info_col .bio_container .home_bio_wrapper::-webkit-scrollbar {
           width: 1px; }
-        .main_fluid .bio_info_col .bio_container .home_bio_wrapper p, .main_fluid .bio_info_col .bio_container .home_bio_wrapper span {
+         .bio_info_col .bio_container .home_bio_wrapper p,  .bio_info_col .bio_container .home_bio_wrapper span {
           font-size: 14px;
           font-family: 'Conv_bpg_nino_medium_caps' !important;
           color: #fff;
@@ -2083,19 +2085,19 @@ audio {
           word-break: break-all;
           padding-right: 10px;
           text-align: justify; }
-      .main_fluid .bio_info_col .bio_container a {
+       .bio_info_col .bio_container a {
         font-size: 20px;
         color: #ebc076;
         text-transform: capitalize;
         font-family: 'Conv_bebas-neue-bold'; }
-  .main_fluid .book_col {
+   .book_col {
     padding-left: 0px;
     padding-right: 0px; }
-    .main_fluid .book_col .fraz_fluid {
+     .book_col .fraz_fluid {
       padding: 50px 73px;
       background-color: #ebc076;
       padding-bottom: 25px; }
-      .main_fluid .book_col .fraz_fluid h5 {
+       .book_col .fraz_fluid h5 {
         font-size: 42px;
         color: #000;
         font-style: italic;
@@ -2108,18 +2110,18 @@ audio {
         border: 6px solid transparent;
         overflow: hidden;
         border-radius: 15px; }
-        .main_fluid .book_col .fraz_fluid h5:hover {
+         .book_col .fraz_fluid h5:hover {
           border: 6px solid #000;
           -webkit-transition: .2s;
           -o-transition: .2s;
           transition: .2s; }
-      .main_fluid .book_col .fraz_fluid p {
+       .book_col .fraz_fluid p {
         font-size: 36px;
         color: #000;
         margin-top: 30px; }
-    .main_fluid .book_col .book_box_row {
+     .book_col .book_box_row {
       padding-bottom: 20px; }
-      .main_fluid .book_col .book_box_row .book_box .book_image {
+       .book_col .book_box_row .book_box .book_image {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -2129,43 +2131,43 @@ audio {
         overflow: hidden;
         width: 240px;
         border-radius: 10px; }
-        .main_fluid .book_col .book_box_row .book_box .book_image img {
+         .book_col .book_box_row .book_box .book_image img {
           width: 240px;
           height: 350px;
           -webkit-transition: .3s;
           -o-transition: .3s;
           transition: .3s;
           border-radius: 10px; }
-          .main_fluid .book_col .book_box_row .book_box .book_image img:hover {
+           .book_col .book_box_row .book_box .book_image img:hover {
             -webkit-transform: scale(1.1, 1.1);
             -ms-transform: scale(1.1, 1.1);
             transform: scale(1.1, 1.1);
             cursor: pointer;
             border-radius: 10px; }
-      .main_fluid .book_col .book_box_row .book_box .book_infos {
+       .book_col .book_box_row .book_box .book_infos {
         width: 240px;
         text-align: justify;
         text-align-last: center;
         margin: 0 auto; }
-        .main_fluid .book_col .book_box_row .book_box .book_infos h4 {
+         .book_col .book_box_row .book_box .book_infos h4 {
           color: #ebc076;
           margin: 13px 0;
           font-weight: bold;
           cursor: pointer; }
-        .main_fluid .book_col .book_box_row .book_box .book_infos p {
+         .book_col .book_box_row .book_box .book_infos p {
           color: #fff;
           font-style: italic;
           overflow-y: scroll;
           height: 120px;
           padding-right: 10px;
           word-break: break-word; }
-          .main_fluid .book_col .book_box_row .book_box .book_infos p::-webkit-scrollbar {
+           .book_col .book_box_row .book_box .book_infos p::-webkit-scrollbar {
             width: 1px; }
-        .main_fluid .book_col .book_box_row .book_box .book_infos a {
+         .book_col .book_box_row .book_box .book_infos a {
           display: inline-block;
           color: #ebc076;
           text-align: left; }
-    .main_fluid .book_col h3 {
+     .book_col h3 {
       cursor: pointer;
       font-size: 42px;
       line-height: 42px;
@@ -2175,9 +2177,9 @@ audio {
       margin: 80px 0;
       color: #fff;
       font-family: 'Conv_bebas-neue-bold'; }
-      .main_fluid .book_col h3 a {
+       .book_col h3 a {
         color: #fff; }
-      .main_fluid .book_col h3:after {
+       .book_col h3:after {
         content: "";
         top: 0;
         left: 0;
@@ -2189,7 +2191,7 @@ audio {
         top: 134px;
         left: 1px;
         border-radius: 50%; }
-  .main_fluid .main_right_col {
+   .main_right_col {
     background-position: right;
     background-color: #1d1813;
     display: -webkit-box;
@@ -2202,36 +2204,36 @@ audio {
     background-image: linear-gradient(to right, rgba(87, 61, 38, 0.1), rgba(87, 61, 38, 0.1)), url(../images/31239362_1692655407495990_8811817060682351172_n.jpg);
     background-size: 50% 100%;
     background-attachment: fixed;
-    height: 100vh;
+    height: calc(100vh - 109px);
     position: relative; }
-    .main_fluid .main_right_col #particles-js {
+     .main_right_col #particles-js {
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
       background-color: rgba(87, 61, 38, 0.3); }
-    .main_fluid .main_right_col .info_box {
+     .main_right_col .info_box {
       color: #fff;
       width: 29%;
       margin-left: 100px; }
-      .main_fluid .main_right_col .info_box h2 {
+       .main_right_col .info_box h2 {
         font-size: 62px;
         line-height: 60px;
         position: relative;
         font-family: 'Conv_bebas-neue-bold';
         USER-SELECT: none; }
-      .main_fluid .main_right_col .info_box p, .main_fluid .main_right_col .info_box span {
+       .main_right_col .info_box p,  .main_right_col .info_box span {
         font-size: 21px;
         margin: 30px 0px;
         color:#fff !important;
         line-height: 27px;
         font-family: 'Conv_bpg_nino_medium_caps' !important; }
-      .main_fluid .main_right_col .info_box a {
+       .main_right_col .info_box a {
         display: inline-block;
         color: #ebc076;
         text-transform: capitalize; }
-        .main_fluid .main_right_col .info_box a span {
+         .main_right_col .info_box a span {
           font-size: 20px;
           color: #ebc076 !important;
           margin: 0;
@@ -2240,28 +2242,28 @@ audio {
           .scrol_header .main_tittle {
               padding:0px!important;
           }
-  .main_fluid .menu_col {
+  .menu_col {
     z-index: 1;
     left: 0;
     padding: 19px 0 7px; }
-    .main_fluid .menu_col.scrol_header .nav ul li a {
+    .menu_col.scrol_header .nav ul li a {
       font-size: 19px !important;
       color: red !important; }
-    .main_fluid .menu_col.scrol_header .main_tittle h1:after {
+    .menu_col.scrol_header .main_tittle h1:after {
       height: 1px !important;
       width: 80px !important; }
-    .main_fluid .menu_col.scrol_header .main_tittle h1 a {
+    .menu_col.scrol_header .main_tittle h1 a {
       font-size: 17px !important; }
-    .main_fluid .menu_col .main_tittle {
+    .menu_col .main_tittle {
       left: 50%;
       padding: 10px 0px; }
-      .main_fluid .menu_col .main_tittle h1 {
+      .menu_col .main_tittle h1 {
         position: relative;
         margin-bottom: 0px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex; }
-        .main_fluid .menu_col .main_tittle h1:after {
+        .menu_col .main_tittle h1:after {
           content: "";
           top: 0;
           left: 0;
@@ -2274,22 +2276,23 @@ audio {
           -webkit-transition: .4s;
           -o-transition: .4s;
           transition: .4s; }
-        .main_fluid .menu_col .main_tittle h1 a {
+        .menu_col .main_tittle h1 a {
         font-family: 'Conv_bebas-neue-bold'; 
           color: #fff;
           font-size: 24px;
+          text-align: left;
           -webkit-transition: .4s;
           -o-transition: .4s;
           transition: .4s; }
-          .main_fluid .menu_col .main_tittle h1 a span {
+          .menu_col .main_tittle h1 a span {
             display: block;
             line-height: 35px; }
-    .main_fluid .menu_col nav {
+    .menu_col nav {
       text-align: left;
       position: relative;
       z-index: 5;
       width: 100%; }
-      .main_fluid .menu_col nav ul {
+      .menu_col nav ul {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -2298,14 +2301,14 @@ audio {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between; }
-        .main_fluid .menu_col nav ul li {
+        .menu_col nav ul li {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
           -webkit-box-align: center;
           -ms-flex-align: center;
           align-items: center; }
-          .main_fluid .menu_col nav ul li a {
+          .menu_col nav ul li a {
             display: inline-block;
             font-size: 17px;
             padding:5px 0;
@@ -2321,11 +2324,11 @@ audio {
             color: #fff;
             margin-right: 5px;
             font-family: 'Conv_bebas-neue-bold'; }
-            .main_fluid .menu_col nav ul li a.active {
+            .menu_col nav ul li a.active {
               color: #ebc076; }
-            .main_fluid .menu_col nav ul li a:hover {
+            .menu_col nav ul li a:hover {
               color: #ebc076; }
-            .main_fluid .menu_col nav ul li a .fas {
+            .menu_col nav ul li a .fas {
               display: -webkit-box;
               display: -ms-flexbox;
               display: flex;
@@ -2337,7 +2340,7 @@ audio {
               align-items: center;
               font-size: 14px;
               padding-right: 5px; }
-            .main_fluid .menu_col nav ul li a .far {
+            .menu_col nav ul li a .far {
               display: -webkit-box;
               display: -ms-flexbox;
               display: flex;
@@ -2773,7 +2776,7 @@ audio {
         left: 1px;
         border-radius: 50%; }
 
-.main_fluid .menu_col.scrol_header nav ul li a {
+.menu_col.scrol_header nav ul li a {
   font-size: 17px; }
 
 .bio_tittle {
@@ -3042,20 +3045,20 @@ audio {
   border-radius: 10px; }
 
 @media screen and (max-width: 1366px) {
-  .main_fluid .menu_col nav ul li a {
+  .menu_col nav ul li a {
     font-size: 14px; }
 
-  .main_fluid .main_right_col .info_box {
+   .main_right_col .info_box {
     width: 35%; }
 
-  .main_fluid .main_right_col .info_box h2 {
+   .main_right_col .info_box h2 {
     font-size: 52px; }
 
-  .main_fluid .main_right_col .info_box p, .main_fluid .main_right_col .info_box span {
+   .main_right_col .info_box p,  .main_right_col .info_box span {
     font-size: 16px;
     margin: 18px 0px; }
 
-  .main_fluid .main_right_col .info_box a span {
+   .main_right_col .info_box a span {
     font-size: 18px; } }
 @media screen and (max-width: 992px) {
     
@@ -3118,7 +3121,7 @@ audio {
   .events_main_content {
     padding: 30px 0px 50px; }
 
-  .main_fluid .menu_col {
+  .menu_col {
     padding: 0px 0 0px; }
 
   .events_nd_info .event_nd_text p, .events_nd_info .event_nd_text span {
@@ -3246,12 +3249,12 @@ audio {
   .bio_nd_text_wrapper .bio_nd_end_orn {
     bottom: 3%; }
     
-    .main_fluid .menu_col .main_tittle h1 a {
+    .menu_col .main_tittle h1 a {
    
     font-size: 17px !important;
     
 }
-.main_fluid .menu_col .main_tittle h1:after {
+.menu_col .main_tittle h1:after {
     content: "";
    
     width: 82px;
@@ -3261,7 +3264,7 @@ audio {
   
 }
 
-  .main_fluid .menu_col .main_tittle {
+  .menu_col .main_tittle {
     left: 50%;
     padding: 9px 0px 0px !important; }
 
@@ -3349,13 +3352,13 @@ audio {
   .footer_pegion {
     display: none; }
 
-  .main_fluid .char_col .char_container h2 a {
+   .char_col .char_container h2 a {
     font-size: 32px; }
 
   .reviews_fluid .review_cont .reviews_box .review_text p, .reviews_fluid .review_cont .reviews_box .review_text span {
     font-size: 13px; }
 
-  .main_fluid .book_col h3 {
+   .book_col h3 {
     font-size: 32px;
     margin: 30px 0 40px; }
 
@@ -3368,10 +3371,10 @@ audio {
   .fraz_fluid span {
     font-size: 24px; }
 
-  .main_fluid .main_right_col .info_box {
+   .main_right_col .info_box {
     width: 65%; }
 
-  .main_fluid {
+   {
     padding-top: 23px; }
 
   #bio_move {
@@ -3392,23 +3395,23 @@ audio {
     .navbar .resp_menu {
       display: block; }
 
-  .main_fluid .main_right_col .info_box h2 {
+   .main_right_col .info_box h2 {
     font-size: 48px;
     line-height: 49px; }
 
-  .main_fluid .main_right_col .info_box {
+   .main_right_col .info_box {
     
     margin-left: 0px; }
 
-  .main_fluid .main_right_col .info_box p {
+   .main_right_col .info_box p {
     font-size: 20px;
     margin: 25px 0px;
     line-height: 26px; }
 
-  .main_fluid .main_right_col .info_box a {
+   .main_right_col .info_box a {
     font-size: 17px; }
 
-  .main_fluid .main_right_col {
+   .main_right_col {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -3427,24 +3430,24 @@ audio {
     font-size: 28px;
     padding: 0 0; }
 
-  .main_fluid .bio_coll .bio_img_col .bio_img {
+   .bio_coll .bio_img_col .bio_img {
     width: 360px;
     height: 555px;
     border-radius: 45px;
     overflow: hidden; }
 
-  .main_fluid .bio_info_col .bio_container {
+   .bio_info_col .bio_container {
     width: 441px;
     height: 555px;
     text-align: center; }
 
-  .main_fluid .bio_info_col .bio_container h2 {
+   .bio_info_col .bio_container h2 {
     font-size: 28px; }
 
   .bio_container {
     max-width: 789px; }
 
-  .main_fluid .bio_info_col .bio_container {
+   .bio_info_col .bio_container {
     width: 441px;
     height: 555px;
     text-align: center; }
@@ -3452,37 +3455,37 @@ audio {
   .chilhood h3 {
     font-size: 22px; }
 
-  .main_fluid .bio_info_col .bio_container .chilhood p {
+   .bio_info_col .bio_container .chilhood p {
     font-size: 14px; }
 
   .ed_carr h3 {
     font-size: 22px; }
 
-  .main_fluid .bio_info_col .bio_container .ed_carr p {
+   .bio_info_col .bio_container .ed_carr p {
     font-size: 14px; }
 
-  .main_fluid .bio_info_col .bio_container a {
+   .bio_info_col .bio_container a {
     font-size: 17px; }
 
-  .main_fluid .bio_coll .bio_img_col .bio_img img {
+   .bio_coll .bio_img_col .bio_img img {
     width: 85%;
     height: unset;
     border-radius: 33px; }
 
-  .main_fluid .char_col .char_container {
+   .char_col .char_container {
     padding: 35px 0px; }
 
-  .main_fluid .char_col .char_container #demos .owl-carousel .item {
+   .char_col .char_container #demos .owl-carousel .item {
     width: 170px;
     height: 226px;
     border-radius: 10px; }
 
-  .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev {
+   .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev {
     width: 40px;
     height: 37px;
     left: -35px; }
 
-  .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-next {
+   .char_col .char_container #demos .owl-carousel .owl-nav .owl-next {
     width: 40px;
     height: 37px;
     right: -35px; }
@@ -3533,10 +3536,10 @@ audio {
   .fraz_fluid {
     padding: 20px 15px; } }
 @media screen and (max-width: 768px) {
-  .main_fluid .bio_info_col {
+   .bio_info_col {
     padding: 0px 0; }
 
-  .main_fluid .bio_coll .bio_img_col {
+   .bio_coll .bio_img_col {
     padding: 0px 0; }
 
   .fraz_fluid span {
@@ -3585,7 +3588,7 @@ audio {
 
 
 
-  .main_fluid .main_right_col .info_box h2:after {
+   .main_right_col .info_box h2:after {
     width: 100%;
     height: 4px;
     top: 103%; }
@@ -3593,11 +3596,11 @@ audio {
   .bio_tittle {
     font-size: 32px; }
 
-  .main_fluid .main_right_col .info_box h2 {
+   .main_right_col .info_box h2 {
     font-size: 40px;
     line-height: 48px; }
 
-  .main_fluid .main_right_col .info_box p {
+   .main_right_col .info_box p {
     font-size: 18px;
     margin: 5px 0px;
     line-height: 25px;
@@ -3610,10 +3613,10 @@ audio {
     font-size: 19px;
     color: #000; }
 
-  .main_fluid .bio_coll .bio_img_col {
+   .bio_coll .bio_img_col {
     padding: 0px 0; }
 
-  .main_fluid .bio_info_col {
+   .bio_info_col {
     padding: 0px 20px;
     padding-bottom: 20px;
     display: -webkit-box;
@@ -3626,12 +3629,12 @@ audio {
   .char_fluid {
     padding-bottom: 25px; }
 
-  .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev {
+   .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev {
     width: 40px;
     height: 37px;
     left: -7px; }
 
-  .main_fluid .char_col .char_container #demos .owl-carousel .owl-nav .owl-next {
+   .char_col .char_container #demos .owl-carousel .owl-nav .owl-next {
     width: 40px;
     height: 37px;
     right: -7px; }
@@ -3691,19 +3694,19 @@ audio {
   .contact_fluid .cont_cont .fa_icons span {
     margin-bottom: 24px; }
 
-  .main_fluid .bio_info_col .bio_container {
+   .bio_info_col .bio_container {
     padding-right: 0px; } }
 @media screen and (max-width: 376px) {
-  .main_fluid .main_right_col .info_box {
+   .main_right_col .info_box {
     color: #fff;
     width: 90%;
     }
 
-  .main_fluid .main_right_col .info_box h2 {
+   .main_right_col .info_box h2 {
     font-size: 27px;
     line-height: 48px; }
 
-  .main_fluid .main_right_col .info_box h2:after {
+   .main_right_col .info_box h2:after {
     width: 88%;
     height: 4px;
     top: 100%; }
