@@ -3,13 +3,19 @@
     <appHomeTop></appHomeTop>
     <appHomeBook></appHomeBook>
     <appHomePhrazes
+      v-if="HomePhrazesData"
       :PhrazhesData="HomePhrazesData[0].title_ka"
     ></appHomePhrazes>
     <appHomeBiography></appHomeBiography>
     <appHomePhrazes
+      v-if="HomePhrazesData"
       :PhrazhesData="HomePhrazesData[1].title_ka"
     ></appHomePhrazes>
     <appHomeCharachters></appHomeCharachters>
+    <appHomePhrazes
+      v-if="HomePhrazesData"
+      :PhrazhesData="HomePhrazesData[2].title_ka"
+    ></appHomePhrazes>
   </div>
 </template>
 
@@ -38,7 +44,6 @@ export default {
       .get("http://datainfo.online/api/ka/home_phrases")
       .then(response => {
         this.HomePhrazesData = response.data.data;
-        console.log(this.HomePhrazesData);
       })
       .catch(function(error) {
         console.log(error);

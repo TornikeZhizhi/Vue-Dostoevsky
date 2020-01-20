@@ -2,7 +2,7 @@
  <div class="container-fluid section2">
 
 
-		<div id="penbox"><img src="/assets/images/feather-pen-and-paper-png-scrolled-paper-and-quill-pen-png-clipart-image-572.png"></div>
+		<div id="penbox"><img src="../../assets/images/feather-pen-and-paper-png-scrolled-paper-and-quill-pen-png-clipart-image-572.png"></div>
 
 	<div class="container">
 			<div class="row">
@@ -26,7 +26,7 @@
 							<ul class="hardcover_front">
 								<li>
 									<div class="coverDesign yellow">								
-										<img src="/assets/images/books/4fd305a07ddbfa9af94c74e46fddf4aa.jpg" width="100%">
+										<img src="../../assets/images/22154171_1500562513371948_6027405587324085279_n.jpg" width="100%">
 									</div>
 								</li>
 								<li></li>
@@ -94,7 +94,7 @@
 							<ul class="hardcover_front">
 								<li>
 									<div class="coverDesign yellow">								
-										<img src="/assets/images/books/acae9b1938b616c6de569608234f3f3d.jpg" width="100%">
+										<img src="../../assets/images/22154171_1500562513371948_6027405587324085279_n.jpg" width="100%">
 									</div>
 								</li>
 								<li></li>
@@ -162,7 +162,7 @@
 							<ul class="hardcover_front">
 								<li>
 									<div class="coverDesign yellow">								
-										<img src="/assets/images/books/c8b684ce6bf83313312023c10d61a817.jpg" width="100%">
+										<img src="../../assets/images/22154171_1500562513371948_6027405587324085279_n.jpg" width="100%">
 									</div>
 								</li>
 								<li></li>
@@ -228,7 +228,7 @@
 							<ul class="hardcover_front">
 								<li>
 									<div class="coverDesign yellow">								
-										<img src="/assets/images/books/20f086143ac10152fb924f92fe2c3bd5.jpg" width="100%">
+										<img src="../../assets/images/22154171_1500562513371948_6027405587324085279_n.jpg" width="100%">
 									</div>
 								</li>
 								<li></li>

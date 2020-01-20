@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-12 main_right_col">
+  <div class="col-md-12 main_right_col" v-if="homeTopText">
     <div class="info_box">
       <h2>{{ homeTopText.data.title_ka }}</h2>
       <div class="main_info_wrapper">

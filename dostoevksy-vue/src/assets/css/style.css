@@ -74,7 +74,10 @@ html, body {
   font-style: normal; }
   
    
-  
+  .owl-theme .owl-nav {
+    color:transparent !important;
+    background: transparent !important;
+  }
   
   /* * { cursor: none !important; } */
   .cursor{  cursor: none; width: 35px; height: auto; position: fixed; pointer-events: none; top: 0; left: 0; display: none; z-index: 10000; transform: rotateY(180deg) rotateX(0deg);  transition: transform 0.5s ease; overflow: show; }
@@ -1940,6 +1943,7 @@ audio {
           transform: translateY(-50%);
           margin-top: 0px; }
            .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev {
+            background: unset;
             background-image: url("../images/left-arrow-brown-hi.png");
             width: 57px;
             height: 47px;
@@ -1947,6 +1951,7 @@ audio {
             position: absolute;
             left: -70px;
             z-index: -1;
+            color: transparent;
             -webkit-transform: translateY(-50%) rotate(180deg);
             -ms-transform: translateY(-50%) rotate(180deg);
             transform: translateY(-50%) rotate(180deg);
@@ -1964,9 +1969,11 @@ audio {
              .char_col .char_container #demos .owl-carousel .owl-nav .owl-prev span {
               display: none; }
            .char_col .char_container #demos .owl-carousel .owl-nav .owl-next {
+            background: unset;
             background-image: url("../images/left-arrow-brown-hi.png");
             width: 57px;
             height: 47px;
+            color:transparent;
             background-repeat: no-repeat;
             position: absolute;
             z-index: -1;
