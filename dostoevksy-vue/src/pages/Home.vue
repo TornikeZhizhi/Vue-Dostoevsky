@@ -2,20 +2,13 @@
   <div>
     <appHomeTop></appHomeTop>
     <appHomeBook></appHomeBook>
-    <appHomePhrazes
-      v-if="HomePhrazesData"
-      :PhrazhesData="HomePhrazesData[0].title_ka"
-    ></appHomePhrazes>
+    <appHomePhrazes v-if="HomePhrazesData" :PhrazhesData="HomePhrazesData[0]"></appHomePhrazes>
     <appHomeBiography></appHomeBiography>
-    <appHomePhrazes
-      v-if="HomePhrazesData"
-      :PhrazhesData="HomePhrazesData[1].title_ka"
-    ></appHomePhrazes>
+    <appHomePhrazes v-if="HomePhrazesData" :PhrazhesData="HomePhrazesData[1]"></appHomePhrazes>
     <appHomeCharachters></appHomeCharachters>
-    <appHomePhrazes
-      v-if="HomePhrazesData"
-      :PhrazhesData="HomePhrazesData[2].title_ka"
-    ></appHomePhrazes>
+    <appHomePhrazes v-if="HomePhrazesData" :PhrazhesData="HomePhrazesData[2]"></appHomePhrazes>
+    <appHomeReviews></appHomeReviews>
+    <appHomePhrazes v-if="HomePhrazesData" :PhrazhesData="HomePhrazesData[3]"></appHomePhrazes>
   </div>
 </template>
 
@@ -26,6 +19,7 @@ import HomeBook from "../components/HomeComponents/HomeBooks.vue";
 import HomePhrazes from "../components/HomeComponents/HomePhases.vue";
 import HomeBiography from "../components/HomeComponents/HomeBiography.vue";
 import HomeCharachters from "../components/HomeComponents/HomeCharackters.vue";
+import HomeReviews from "../components/HomeComponents/HomeReviews.vue";
 export default {
   data() {
     return {
@@ -37,7 +31,8 @@ export default {
     appHomeBook: HomeBook,
     appHomePhrazes: HomePhrazes,
     appHomeBiography: HomeBiography,
-    appHomeCharachters: HomeCharachters
+    appHomeCharachters: HomeCharachters,
+    appHomeReviews: HomeReviews
   },
   created() {
     axios

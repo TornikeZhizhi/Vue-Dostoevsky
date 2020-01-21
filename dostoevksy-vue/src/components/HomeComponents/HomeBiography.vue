@@ -1,7 +1,9 @@
 <template>
   <div class="container-fluid section3">
     <div class="container bio_container_parent text-center">
-      <h2 class="bio_tittle"><a href="biography/">ბიოგრაფია</a></h2>
+      <h2 class="bio_tittle">
+        <a href="biography/">ბიოგრაფია</a>
+      </h2>
 
       <div class="row">
         <div class="col-md-12 bio_coll">
@@ -12,9 +14,7 @@
                 data-wow-offset="300"
                 style="visibility: visible; animation-name: fadeInLeft;"
               >
-                <img
-                  src="../../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg"
-                />
+                <img src="../../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg" />
               </div>
             </div>
 
@@ -25,8 +25,8 @@
                 style="visibility: visible; animation-name: fadeInRight;"
               >
                 <h2>
-                  ბიოგრაფია<br />
-                  თეოდორ დოსტოევსკი
+                  ბიოგრაფია
+                  <br />თეოდორ დოსტოევსკი
                 </h2>
 
                 <div class="chilhood">
@@ -67,9 +67,9 @@
                   </div>
                 </div>
 
-                <a href="biography/" class="btn-6"
-                  ><span class="btn-62">გაიგეთ მეტი</span></a
-                >
+                <a href="biography/" class="btn-6">
+                  <span class="btn-62">გაიგეთ მეტი</span>
+                </a>
               </div>
             </div>
           </div>
