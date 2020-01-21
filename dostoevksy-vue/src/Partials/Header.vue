@@ -7,15 +7,15 @@
             <div class="col-lg-2 col-9 d-flex align-items-center">
               <div class="main_tittle">
                 <router-link tag="h1" to="/">
-                  <a>თეოდორ<span>დოსტოევსკი</span></a>
+                  <a>
+                    თეოდორ
+                    <span>დოსტოევსკი</span>
+                  </a>
                 </router-link>
               </div>
             </div>
 
-            <div
-              class="col-lg-10 col-3 d-flex align-items-center navbar"
-              id="myNavbar"
-            >
+            <div class="col-lg-10 col-3 d-flex align-items-center navbar" id="myNavbar">
               <nav class="defaulf_nav">
                 <ul>
                   <router-link
@@ -27,7 +27,7 @@
                     :exact="data.slug_en == '/home' ? false : true"
                     active-class="active"
                   >
-                    <a href=""> {{ data.title_ka }}</a>
+                    <a href>{{ data.title_ka }}</a>
                   </router-link>
                 </ul>
               </nav>
@@ -41,55 +41,49 @@
                   <!--	<span>eng</span>-->
                   <!--	<span>rus</span>-->
                   <!--</div>-->
-                  <a
-                    href="javascript:void(0)"
-                    class="closebtn"
-                    onclick="closeNav()"
-                    >×</a
-                  >
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                   <div class="overlay-content">
                     <ul>
                       <li>
-                        <a href="/home" class="active"
-                          ><i class="fas fa-home"></i>მთავარი</a
-                        >
+                        <a href="/home" class="active">
+                          <i class="fas fa-home"></i>მთავარი
+                        </a>
                       </li>
                       <li>
-                        <a href="/biography"
-                          ><i class="fas fa-feather"></i>ბიოგრაფია</a
-                        >
+                        <a href="/biography">
+                          <i class="fas fa-feather"></i>ბიოგრაფია
+                        </a>
                       </li>
                       <li>
-                        <a href="/characters"
-                          ><i class="fas fa-user-alt"></i>პერსონაჟები</a
-                        >
+                        <a href="/characters">
+                          <i class="fas fa-user-alt"></i>პერსონაჟები
+                        </a>
                       </li>
                       <li>
-                        <a href="/books"><i class="fas fa-book"></i>წიგნები</a>
+                        <a href="/books">
+                          <i class="fas fa-book"></i>წიგნები
+                        </a>
                       </li>
                       <li>
-                        <a href="/reviews"
-                          ><i class="fas fa-star"></i>რეცენზიები</a
-                        >
+                        <a href="/reviews">
+                          <i class="fas fa-star"></i>რეცენზიები
+                        </a>
                       </li>
                       <li>
-                        <a href="/interesting-facts"
-                          ><i class="fas fa-church"></i>საინტერესო ფაქტები</a
-                        >
+                        <a href="/interesting-facts">
+                          <i class="fas fa-church"></i>საინტერესო ფაქტები
+                        </a>
                       </li>
                       <li>
-                        <a href="/events"
-                          ><i class="fas fa-calendar-alt"></i>ღონისძიებები</a
-                        >
+                        <a href="/events">
+                          <i class="fas fa-calendar-alt"></i>ღონისძიებები
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </div>
 
-                <span
-                  class="hamburger_menu"
-                  style="font-size:40px;cursor:pointer;color: #ebc076;"
-                >
+                <span class="hamburger_menu" style="font-size:40px;cursor:pointer;color: #ebc076;">
                   <div></div>
                   <div></div>
                   <div></div>

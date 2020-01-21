@@ -81,7 +81,6 @@ export default {
       .then(response => {
         if (response.statusText == "OK") {
           this.BiographyPhrazhes = response.data.data[0];
-          console.log(response.data.data);
         }
       })
       .catch(function(error) {
