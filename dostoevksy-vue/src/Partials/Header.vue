@@ -95,6 +95,19 @@
         </div>
       </div>
     </div>
+    <div class="main_loader" id="loader">
+      <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -108,6 +121,9 @@ export default {
   },
 
   created() {
+    setTimeout(function() {
+      document.getElementById("loader").style.display = "none";
+    }, 1000);
     axios
       .get("http://datainfo.online/api/ka/pages")
       .then(response => {

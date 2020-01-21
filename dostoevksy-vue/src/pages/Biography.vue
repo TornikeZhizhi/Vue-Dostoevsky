@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="biography_fluid" v-if="BiographyInfo">
+    <div class="biography_fluid">
       <div class="biography_nd_main_content">
         <div class="biography_img">
           <img src="../assets/images/46657256_1962923843827383_4554362696245444608_n.png" />

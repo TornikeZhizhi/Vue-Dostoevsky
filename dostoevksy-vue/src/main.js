@@ -12,6 +12,15 @@ const router = new VueRouter({
   }
 });
 
+router.beforeEach((to, from, next) => {
+  document.getElementById("loader").style.display = "flex";
+  setTimeout(function() {
+    document.getElementById("loader").style.display = "none";
+  }, 2000);
+
+  next();
+});
+
 new Vue({
   el: "#app",
   router,
