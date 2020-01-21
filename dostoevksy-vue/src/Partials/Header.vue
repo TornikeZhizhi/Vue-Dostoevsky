@@ -27,7 +27,10 @@
                     :exact="data.slug_en == '/home' ? false : true"
                     active-class="active"
                   >
-                    <a href>{{ data.title_ka }}</a>
+                    <a href>
+                      <i :class="data.faIcons"></i>
+                      {{ data.title_ka }}
+                    </a>
                   </router-link>
                 </ul>
               </nav>
@@ -95,7 +98,7 @@
         </div>
       </div>
     </div>
-    <div class="main_loader" id="loader">
+    <!-- <div class="main_loader" id="loader">
       <div class="loader">
         <div></div>
         <div></div>
@@ -107,7 +110,7 @@
         <div></div>
         <div></div>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
@@ -116,19 +119,32 @@ import axios from "axios";
 export default {
   data() {
     return {
-      NavData: null
+      NavData: null,
+      FaIcons: [
+        "fas fa-home",
+        "fas fa-feather",
+        "fas fa-user-alt",
+        "fas fa-book",
+        "fas fa-star",
+        "fas fa-church",
+        "fas fa-calendar-alt"
+      ]
     };
   },
 
   created() {
-    setTimeout(function() {
-      document.getElementById("loader").style.display = "none";
-    }, 1000);
+    // setTimeout(function() {
+    //   document.getElementById("loader").style.display = "none";
+    // }, 1000);
     axios
       .get("http://datainfo.online/api/ka/pages")
       .then(response => {
         this.NavData = response.data.data;
         this.NavData[0].slug_en = "/home";
+
+        for (let i = 0; i < response.data.data.length; i++) {
+          this.NavData[i].faIcons = this.FaIcons[i];
+        }
       })
       .catch(function(error) {
         console.log(error);

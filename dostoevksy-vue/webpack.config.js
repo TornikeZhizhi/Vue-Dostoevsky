@@ -1,5 +1,8 @@
 var path = require("path");
 var webpack = require("webpack");
+const customConfig = require("./custom-config");
+// before module export.
+environment.config.merge(customConfig);
 
 module.exports = {
   entry: "./src/main.js",

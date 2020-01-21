@@ -1,7 +1,11 @@
-import Vue from "vue";
+// import Vue from "vue";
+import Vue from "vue/dist/vue.esm.js";
 import VueRouter from "vue-router";
 import App from "./App.vue";
 import { routes } from "./router.js";
+import BootstrapVue from "bootstrap-vue";
+
+Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -13,10 +17,10 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.getElementById("loader").style.display = "flex";
-  setTimeout(function() {
-    document.getElementById("loader").style.display = "none";
-  }, 2000);
+  // document.getElementById("loader").style.display = "flex";
+  // setTimeout(function() {
+  //   document.getElementById("loader").style.display = "none";
+  // }, 2000);
 
   next();
 });
