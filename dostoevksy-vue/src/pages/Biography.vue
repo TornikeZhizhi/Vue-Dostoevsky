@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div v-if="BiographyInfo">
     <div class="biography_fluid">
       <div class="biography_nd_main_content">
         <div class="biography_img">
-          <img src="../assets/images/46657256_1962923843827383_4554362696245444608_n.png" />
+          <img
+            src="../assets/images/46657256_1962923843827383_4554362696245444608_n.png"
+          />
         </div>
 
         <div class="biography_nd_tittle">
@@ -31,17 +33,21 @@
         </div>
 
         <div class="biography_nd_main_text">
-          <div class="bio_nd_text_wrapper" v-for="data in BiographyInfo" :key="data.id">
+          <div
+            class="bio_nd_text_wrapper"
+            v-for="data in BiographyInfo"
+            :key="data.id"
+          >
             <div class="bio_nd_end_orn">
               <img src="../assets/images/Asset 2.png" />
             </div>
 
             <div class="bio_nd_tittle">
-              <h3>{{data.title_ka}}</h3>
+              <h3>{{ data.title_ka }}</h3>
             </div>
 
             <div class="bio_nd_text">
-              <p>{{data.text_ka}}</p>
+              <p>{{ data.text_ka }}</p>
             </div>
           </div>
         </div>

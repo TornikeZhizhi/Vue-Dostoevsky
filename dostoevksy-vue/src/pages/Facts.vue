@@ -44,6 +44,7 @@
             v-for="(p, index) in pagination.pages"
             @click.prevent="setPage(p)"
             :key="index"
+            ref="pagButton"
           >
             {{ p }}
           </button>
@@ -59,7 +60,7 @@ export default {
   data() {
     return {
       data: [],
-      perPage: 2,
+      perPage: 3,
       pagination: {}
     };
   },
@@ -70,7 +71,13 @@ export default {
   },
   methods: {
     setPage(p) {
-      console.log(this.data.length);
+      if (this.$refs.pagButton) {
+        for (var i = 0; i < this.$refs.pagButton.length; i++) {
+          this.$refs.pagButton[i].classList.remove("active");
+        }
+        this.$refs.pagButton[p - 1].classList.add("active");
+      }
+
       this.pagination = this.paginator(this.data.length, p);
     },
     paginate(data) {
@@ -98,6 +105,9 @@ export default {
       .then(response => {
         this.data = response.data.data;
         _this.setPage(1);
+        setTimeout(function() {
+          this.$refs.pagButton[0].classList.add("active");
+        }, 10);
       })
       .catch(function(error) {});
   }
@@ -159,5 +169,9 @@ export default {
 .page-link:hover {
   background-color: #7d3920;
   color: #fff;
+}
+
+.btn-primary.active {
+  background: #000 !important;
 }
 </style>

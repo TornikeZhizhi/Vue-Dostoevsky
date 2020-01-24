@@ -16,7 +16,9 @@
                     <ul class="hardcover_front">
                       <li>
                         <div class="coverDesign yellow">
-                          <img src="../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg" />
+                          <img
+                            src="../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg"
+                          />
                         </div>
                       </li>
                       <li></li>
@@ -24,9 +26,9 @@
                     <ul class="page">
                       <li></li>
                       <li>
-                        <h4>{{data.title_ka}}</h4>
+                        <h4>{{ data.title_ka }}</h4>
                         <div class="book_r_content">
-                          <span>{{data.text_ka}}</span>
+                          <span>{{ data.text_ka }}</span>
                         </div>
                       </li>
                       <li></li>
@@ -49,9 +51,9 @@
               </ul>
 
               <div class="book_infos">
-                <h4>{{data.title_ka}}</h4>
+                <h4>{{ data.title_ka }}</h4>
                 <div class="book_text_wrapper">
-                  <p>{{data.text_ka}}</p>
+                  <p>{{ data.text_ka }}</p>
                 </div>
 
                 <a href="book/იდიოტი" class="btn-6">
@@ -79,7 +81,6 @@ export default {
       .get("http://datainfo.online/api/ka/books")
       .then(response => {
         this.BooksData = response.data.data;
-        console.log(this.BooksData);
       })
       .catch(function(error) {
         console.log(error);
@@ -88,5 +89,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
