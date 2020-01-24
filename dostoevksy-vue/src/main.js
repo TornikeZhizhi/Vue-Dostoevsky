@@ -1,11 +1,9 @@
-// import Vue from "vue";
-import Vue from "vue/dist/vue.esm.js";
+import Vue from "vue";
+// import Vue from "vue/dist/vue.esm.js";
 import VueRouter from "vue-router";
 import App from "./App.vue";
 import { routes } from "./router.js";
-import BootstrapVue from "bootstrap-vue";
 
-Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 
 const router = new VueRouter({

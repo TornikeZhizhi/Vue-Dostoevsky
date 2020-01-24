@@ -419,6 +419,11 @@ html, body {
   width: 90%;
   margin: 70px auto 195px;
   position: relative; }
+
+  .facts_text_wrapper .facts_nd_main_text:last-child {
+    margin: 70px auto 95px;
+  }
+
   .facts_nd_main_text .facts_decor_top {
     position: absolute;
     top: 107%;
@@ -1176,9 +1181,7 @@ ul {
   -moz-transition: color 0.3s, border-color 0.3s;
   transition: color 0.3s, border-color 0.3s; }
 
-.btn:hover {
-  border-color: #16a085;
-  color: #16a085; }
+
 
 /* basic grid, only for this demo */
 .align {
