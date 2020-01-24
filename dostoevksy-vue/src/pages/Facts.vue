@@ -17,12 +17,8 @@
           <img src="../assets/images/fdAsset 1.png" />
         </div>
       </div>
-      <div class="facts_text_wrapper">
-        <div
-          class="facts_nd_main_text"
-          v-for="list in collection"
-          :key="list.id"
-        >
+      <div class="facts_text_wrapper" v-if="factTrue">
+        <div class="facts_nd_main_text" v-for="list in collection" :key="list.id">
           <div class="facts_decor_top">
             <img src="../assets/images/orn_red.png" />
           </div>
@@ -36,6 +32,9 @@
           </div>
         </div>
       </div>
+      <div v-if="!factTrue" class="error_info">
+        <h2>ინფორმაცა ვერ მოიძებნა</h2>
+      </div>
 
       <div class="facts_pagination">
         <div class="btn-group">
@@ -45,9 +44,7 @@
             @click.prevent="setPage(p)"
             :key="index"
             ref="pagButton"
-          >
-            {{ p }}
-          </button>
+          >{{ p }}</button>
         </div>
       </div>
     </div>
@@ -61,7 +58,9 @@ export default {
     return {
       data: [],
       perPage: 3,
-      pagination: {}
+      pagination: {},
+      currentpage: this.$route.query.currentpage,
+      factTrue: false
     };
   },
   computed: {
@@ -71,6 +70,13 @@ export default {
   },
   methods: {
     setPage(p) {
+      this.currentpage = p;
+      this.$router
+        .replace({
+          query: { currentpage: p }
+        })
+        .catch(err => {});
+
       if (this.$refs.pagButton) {
         for (var i = 0; i < this.$refs.pagButton.length; i++) {
           this.$refs.pagButton[i].classList.remove("active");
@@ -79,6 +85,15 @@ export default {
       }
 
       this.pagination = this.paginator(this.data.length, p);
+      console.log(this.pagination);
+      var QuaryPage = this.pagination.currentPage;
+      var PagQuantity = this.pagination.pages.length;
+
+      for (let k = 1; k < PagQuantity + 1; k++) {
+        if (QuaryPage == k) {
+          this.factTrue = true;
+        }
+      }
     },
     paginate(data) {
       return _.slice(
@@ -98,15 +113,24 @@ export default {
       };
     }
   },
+
   created() {
     var _this = this;
     axios
       .get("http://datainfo.online/api/ka/facts")
       .then(response => {
         this.data = response.data.data;
-        _this.setPage(1);
-        setTimeout(function() {
-          this.$refs.pagButton[0].classList.add("active");
+
+        if (_this.currentpage) {
+          _this.setPage(_this.currentpage);
+        } else {
+          _this.setPage(1);
+        }
+
+        setTimeout(() => {
+          document
+            .getElementsByClassName("btn-primary")
+            [this.$route.query.currentpage - 1].classList.add("active");
         }, 10);
       })
       .catch(function(error) {});
@@ -173,5 +197,18 @@ export default {
 
 .btn-primary.active {
   background: #000 !important;
+}
+.error_info {
+  user-select: none;
+  text-align: center;
+  font-size: 256px !important;
+  text-indent: 30px;
+  color: #7d3920 !important;
+  font-weight: bold;
+  margin: 100px 0;
+}
+
+.error_info {
+  font-family: "Conv_bebas-neue-bold";
 }
 </style>
