@@ -25,11 +25,24 @@
           style="visibility: visible; animation-name: fadeInLeft;"
         >
           <div class="form_box">
-            <form class="forms" action method="post">
-              <input type="text" name="name" placeholder="სახელი..." id="name" />
-              <input type="email" name="email" placeholder="მაილი..." id="email" />
-              <input type="text" name="subject" placeholder="სათაური..." id="subject" />
-              <textarea placeholder="დაწერე წერილი..." id="message"></textarea>
+            <form class="forms" action method="post" @submit.prevent="postHandler()">
+              <input
+                type="text"
+                autocomplete="off"
+                v-model="name"
+                name="name"
+                placeholder="სახელი..."
+                id="name"
+              />
+              <input type="email" v-model="email" name="email" placeholder="მაილი..." id="email" />
+              <input
+                type="text"
+                v-model="title"
+                name="subject"
+                placeholder="სათაური..."
+                id="subject"
+              />
+              <textarea v-model="text" placeholder="დაწერე წერილი..." id="message"></textarea>
               <input type="submit" value="გაგზავნა" id="sendm" />
             </form>
           </div>
@@ -42,21 +55,24 @@
         >
           <div class="info_right">
             <div class="contact_info_box">
-              <p></p>
-              <p>ნებისმიერი შეკითხვის შემთხვევაში, დაგვიკავშირდით ჩვენს Facebook გვერდზე ან მოგვწერეთ საიტზე საკონტაქტო განაცხადის შევსების შემთხვევაში. ჩვენ შევეცდებით ამომწურავი პასუხის გაცემას უმოკლეს დროში.&nbsp;</p>
-
-              <p></p>
+              <p>{{footerData.text_ka}}</p>
             </div>
 
             <div class="fa_icons">
+              <a target="_blank" v-bind:href="footerLink
+              ">
+                <span>
+                  <i class="fab fa-facebook"></i>
+                  {{footerData.facebook}}
+                </span>
+              </a>
               <span>
-                <i class="fab fa-facebook"></i>www.facebook.com/DostoevskyGeo
+                <i class="fas fa-envelope"></i>
+                {{footerData.email}}
               </span>
               <span>
-                <i class="fas fa-envelope"></i>info@dostoevsky.ge
-              </span>
-              <span>
-                <i class="fas fa-map-marker"></i>თბილისი, საქართველო
+                <i class="fas fa-map-marker"></i>
+                {{footerData.location_ka}}
               </span>
             </div>
           </div>
@@ -67,7 +83,54 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      footerData: [],
+      footerLink: "https://www.facebook.com/DostoevskyGeo",
+      name: null,
+      email: null,
+      title: null,
+      text: null
+    };
+  },
+
+  methods: {
+    postHandler() {
+      const formData = {
+        name: this.name,
+        email: this.email,
+        title: this.title,
+        text: this.text
+      };
+      var _this = this;
+      axios
+        .post("https://axios-post-4dd09.firebaseio.com/messages.json", {
+          formData
+        })
+        .then(function(response) {
+          _this.name = null;
+          _this.email = null;
+          _this.title = null;
+          _this.text = null;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  },
+
+  created() {
+    var _this = this;
+    axios
+      .get("http://datainfo.online/api/ka/contact")
+      .then(response => {
+        this.footerData = response.data.data;
+      })
+      .catch(function(error) {});
+  }
+};
 </script>
 
 <style>

@@ -85,7 +85,6 @@ export default {
       }
 
       this.pagination = this.paginator(this.data.length, p);
-      console.log(this.pagination);
       var QuaryPage = this.pagination.currentPage;
       var PagQuantity = this.pagination.pages.length;
 
