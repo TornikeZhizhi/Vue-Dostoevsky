@@ -16,9 +16,7 @@
                     <ul class="hardcover_front">
                       <li>
                         <div class="coverDesign yellow">
-                          <img
-                            src="../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg"
-                          />
+                          <img src="../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg" />
                         </div>
                       </li>
                       <li></li>
@@ -81,6 +79,7 @@ export default {
       .get("http://datainfo.online/api/ka/books")
       .then(response => {
         this.BooksData = response.data.data;
+        console.log(response);
       })
       .catch(function(error) {
         console.log(error);

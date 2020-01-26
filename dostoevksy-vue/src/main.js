@@ -3,14 +3,26 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App.vue";
 import { routes } from "./router.js";
-
+import vueSmoothScroll from "vue2-smooth-scroll";
+Vue.use(vueSmoothScroll);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes,
   mode: "history",
   scrollBehavior(to, from, savedPosition) {
+    console.log(to);
     return { x: 0, y: 0 };
+
+    // if (to.path == "/books") {
+    //   return { x: 0, y: 0 };
+    // }
+    // console.log(to.path, to.hash);
+    // if (to.path == "/facts") {
+    //   return savedPosition;
+    // } else {
+    //   return { x: 0, y: 0 };
+    // }
   }
 });
 

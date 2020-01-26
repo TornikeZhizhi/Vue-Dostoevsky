@@ -7,7 +7,7 @@
       </div>
 
       <div class="fact_nd_tittle">
-        <h2>საინტერესო ფაქტები</h2>
+        <h2 id="top">საინტერესო ფაქტები</h2>
         <img
           class="fact_mn_pc"
           src="../assets/images/45769039_1235016983330731_1471345084237611008_n.png"
@@ -18,7 +18,11 @@
         </div>
       </div>
       <div class="facts_text_wrapper" v-if="factTrue">
-        <div class="facts_nd_main_text" v-for="list in collection" :key="list.id">
+        <div
+          class="facts_nd_main_text"
+          v-for="list in collection"
+          :key="list.id"
+        >
           <div class="facts_decor_top">
             <img src="../assets/images/orn_red.png" />
           </div>
@@ -38,13 +42,17 @@
 
       <div class="facts_pagination">
         <div class="btn-group">
-          <button
-            class="btn btn-primary"
-            v-for="(p, index) in pagination.pages"
-            @click.prevent="setPage(p)"
-            :key="index"
-            ref="pagButton"
-          >{{ p }}</button>
+          <a href="#top" id="smoothlink" v-smooth-scroll="{ offset: -10 }">
+            <button
+              class="btn btn-primary"
+              v-for="(p, index) in pagination.pages"
+              @click.prevent="setPage(p)"
+              :key="index"
+              ref="pagButton"
+            >
+              {{ p }}
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -68,7 +76,13 @@ export default {
       return this.paginate(this.data);
     }
   },
+
   methods: {
+    // scrollHandler() {
+    //   this.$router.replace({
+    //     hash: "tornike"
+    //   });
+    // },
     setPage(p) {
       this.currentpage = p;
       this.$router
