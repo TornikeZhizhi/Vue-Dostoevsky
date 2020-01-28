@@ -57,7 +57,6 @@ export default {
       .then(response => {
         if (response.statusText == "OK") {
           this.CharachtersData = response.data.data;
-          console.log(this.CharachtersData);
         }
       })
       .catch(function(error) {
@@ -67,7 +66,6 @@ export default {
     axios
       .get("http://datainfo.online/api/ka/characters_phrases")
       .then(response => {
-        console.log(response);
         if (response.statusText == "OK") {
           this.BottomPhrazhes = response.data.data[0];
         }
@@ -75,6 +73,8 @@ export default {
       .catch(function(error) {
         console.log(error);
       });
+
+    console.log(this.CharachtersData);
   }
 };
 </script>

@@ -143,6 +143,8 @@ export default {
             .getElementsByClassName("btn-primary")
             [this.$route.query.currentpage - 1].classList.add("active");
         }, 10);
+
+        _this.title = _this.$store.state.pagesTitles[5];
       })
       .catch(function(error) {});
 
@@ -219,15 +221,6 @@ export default {
 
 .btn-primary.active {
   background: #000 !important;
-}
-.error_info {
-  user-select: none;
-  text-align: center;
-  font-size: 256px !important;
-  text-indent: 30px;
-  color: #7d3920 !important;
-  font-weight: bold;
-  margin: 100px 0;
 }
 
 .error_info {

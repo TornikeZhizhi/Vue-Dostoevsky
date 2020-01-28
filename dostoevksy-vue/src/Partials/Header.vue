@@ -18,7 +18,7 @@
             <div class="col-lg-10 col-3 d-flex align-items-center navbar" id="myNavbar">
               <nav class="defaulf_nav">
                 <ul>
-                  <router-link
+                  <!-- <router-link
                     v-for="data in NavData"
                     tag="li"
                     class="link"
@@ -30,6 +30,49 @@
                     <a href>
                       <i :class="data.faIcons"></i>
                       {{ data.title_ka }}
+                    </a>
+                  </router-link>-->
+
+                  <router-link tag="li" class="link" active-class="active" exact to="/home">
+                    <a href>
+                      <i class="fas fa-home"></i>
+                      მთავარი
+                    </a>
+                  </router-link>
+                  <router-link tag="li" class="link" active-class="active" to="/biography">
+                    <a href>
+                      <i class="fas fa-home"></i>
+                      ბიოგრაფია
+                    </a>
+                  </router-link>
+                  <router-link tag="li" class="link" active-class="active" to="/characters">
+                    <a href>
+                      <i class="fas fa-home"></i>
+                      პერსონაჟები
+                    </a>
+                  </router-link>
+                  <router-link tag="li" class="link" active-class="active" to="/books">
+                    <a href>
+                      <i class="fas fa-home"></i>
+                      წიგნები
+                    </a>
+                  </router-link>
+                  <router-link tag="li" class="link" active-class="active" to="/reviews">
+                    <a href>
+                      <i class="fas fa-home"></i>
+                      რეცენზიები
+                    </a>
+                  </router-link>
+                  <router-link tag="li" class="link" active-class="active" to="/facts">
+                    <a href>
+                      <i class="fas fa-home"></i>
+                      საინტერესო ფაქტები
+                    </a>
+                  </router-link>
+                  <router-link tag="li" class="link" active-class="active" to="/events">
+                    <a href>
+                      <i class="fas fa-home"></i>
+                      ღონისძიებები
                     </a>
                   </router-link>
                 </ul>
@@ -142,7 +185,7 @@ export default {
       .then(response => {
         this.NavData = response.data.data;
         this.NavData[0].slug_en = "/home";
-        console.log();
+        console.log(this.NavData);
         for (let i = 0; i < response.data.data.length; i++) {
           this.NavData[i].faIcons = this.FaIcons[i];
           this.$store.state.pagesTitles.push(this.NavData[i].title_ka);

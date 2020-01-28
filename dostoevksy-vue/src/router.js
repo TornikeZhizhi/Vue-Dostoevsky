@@ -5,6 +5,7 @@ import Books from "./pages/Books.vue";
 import Reviews from "./pages/Reviews.vue";
 import Facts from "./pages/Facts.vue";
 import Events from "./pages/Events.vue";
+import InnerBook from "./innerPages/InnerBook.vue";
 
 export const routes = [
   { path: "/home", component: Home },
@@ -12,6 +13,7 @@ export const routes = [
   { path: "/characters", component: Charachters },
   { path: "/books", component: Books },
   { path: "/reviews", component: Reviews },
+  { path: "/books/:id", component: InnerBook },
   { path: "/facts", component: Facts },
   { path: "/events", component: Events },
   { path: "*", redirect: "/home" }
