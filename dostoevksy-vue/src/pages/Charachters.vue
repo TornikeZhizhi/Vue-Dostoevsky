@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid characters_fluid" v-if="CharachtersData">
     <div class="review_tittle text-center">
-      <h2>პერსონაჟები</h2>
+      <h2>{{title}}</h2>
     </div>
 
     <div class="container review_cont">
@@ -32,15 +32,22 @@
         </div>
       </div>
     </div>
+    <appCommonPhrazes :PhrazhesData="BottomPhrazhes"></appCommonPhrazes>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import CommonPhrazes from "../components/HomeComponents/HomePhases.vue";
 export default {
+  components: {
+    appCommonPhrazes: CommonPhrazes
+  },
   data() {
     return {
-      CharachtersData: null
+      CharachtersData: null,
+      title: this.$store.state.pagesTitles[1],
+      BottomPhrazhes: null
     };
   },
 
@@ -51,6 +58,18 @@ export default {
         if (response.statusText == "OK") {
           this.CharachtersData = response.data.data;
           console.log(this.CharachtersData);
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+    axios
+      .get("http://datainfo.online/api/ka/characters_phrases")
+      .then(response => {
+        console.log(response);
+        if (response.statusText == "OK") {
+          this.BottomPhrazhes = response.data.data[0];
         }
       })
       .catch(function(error) {

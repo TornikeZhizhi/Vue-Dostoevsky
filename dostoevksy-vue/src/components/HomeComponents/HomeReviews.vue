@@ -2,7 +2,7 @@
   <div class="container-fluid reviews_fluid reviews_sv text-center page-section">
     <div class="reviews_home_tittle">
       <h2>
-        <a href="reviews/">რეცენზიები</a>
+        <a href="reviews/">{{title}}</a>
       </h2>
     </div>
     <div
@@ -119,7 +119,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      title: this.$store.state.pagesTitles[4]
+    };
+  }
+};
 </script>
 
 <style>

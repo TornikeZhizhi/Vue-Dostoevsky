@@ -136,14 +136,16 @@ export default {
     // setTimeout(function() {
     //   document.getElementById("loader").style.display = "none";
     // }, 1000);
+
     axios
       .get("http://datainfo.online/api/ka/pages")
       .then(response => {
         this.NavData = response.data.data;
         this.NavData[0].slug_en = "/home";
-
+        console.log();
         for (let i = 0; i < response.data.data.length; i++) {
           this.NavData[i].faIcons = this.FaIcons[i];
+          this.$store.state.pagesTitles.push(this.NavData[i].title_ka);
         }
       })
       .catch(function(error) {

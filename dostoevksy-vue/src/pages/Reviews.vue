@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid reviews_nd_fluid">
     <div class="review_tittle text-center">
-      <h2>რეცენზიები</h2>
+      <h2>{{title}}</h2>
     </div>
 
     <div class="container review_cont">
@@ -32,14 +32,21 @@
         </div>
       </div>
     </div>
+    <appCommonPhrazes :PhrazhesData="BottomPhrazhes"></appCommonPhrazes>
   </div>
 </template>
 <script>
 import axios from "axios";
+import CommonPhrazes from "../components/HomeComponents/HomePhases.vue";
 export default {
+  components: {
+    appCommonPhrazes: CommonPhrazes
+  },
   data() {
     return {
-      ReviewsData: null
+      ReviewsData: null,
+      BottomPhrazhes: null,
+      title: this.$store.state.pagesTitles[4]
     };
   },
   created() {
@@ -47,6 +54,17 @@ export default {
       .get("http://datainfo.online/api/ka/reviews")
       .then(response => {
         this.ReviewsData = response.data.data;
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+    axios
+      .get("http://datainfo.online/api/ka/reviews_phrases")
+      .then(response => {
+        if (response.statusText == "OK") {
+          this.BottomPhrazhes = response.data.data[0];
+        }
       })
       .catch(function(error) {
         console.log(error);

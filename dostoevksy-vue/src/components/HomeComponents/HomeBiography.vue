@@ -2,7 +2,7 @@
   <div class="container-fluid section3">
     <div class="container bio_container_parent text-center">
       <h2 class="bio_tittle">
-        <a href="biography/">ბიოგრაფია</a>
+        <a href="biography/">{{title}}</a>
       </h2>
 
       <div class="row">
@@ -80,7 +80,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      title: this.$store.state.pagesTitles[2]
+    };
+  }
+};
 </script>
 
 <style></style>

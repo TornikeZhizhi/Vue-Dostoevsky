@@ -1,9 +1,9 @@
 <template>
-  <div class="container-fluid page-section only_books">
+  <div class="container-fluid page-section only_books" v-if="BooksData">
     <div class="container">
       <div class="row">
         <div class="col-md-12 book_col">
-          <h3 class="text-center">წიგნები</h3>
+          <h3 class="text-center">{{title}}</h3>
           <div class="row book_box_row">
             <div
               class="col-lg-3 col-md-6 d-flex justify-content-center"
@@ -63,15 +63,22 @@
         </div>
       </div>
     </div>
+    <appCommonPhrazes :PhrazhesData="BottomPhrazhes"></appCommonPhrazes>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import CommonPhrazes from "../components/HomeComponents/HomePhases.vue";
 export default {
+  components: {
+    appCommonPhrazes: CommonPhrazes
+  },
   data() {
     return {
-      BooksData: null
+      BooksData: [],
+      BottomPhrazhes: null,
+      title: this.$store.state.pagesTitles[3]
     };
   },
   created() {
@@ -80,6 +87,17 @@ export default {
       .then(response => {
         this.BooksData = response.data.data;
         console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+    axios
+      .get("http://datainfo.online/api/ka/books_phrases")
+      .then(response => {
+        if (response.statusText == "OK") {
+          this.BottomPhrazhes = response.data.data[0];
+        }
       })
       .catch(function(error) {
         console.log(error);

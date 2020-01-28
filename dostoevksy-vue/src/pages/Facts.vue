@@ -1,74 +1,77 @@
 <template>
-  <div class="facts_fluid">
-    <div class="book_nd_main_content">
-      <!-- background bottom -->
-      <div class="book_nd_main_content_bottom_bg">
-        <img src="../assets/images/orn_red2.png" />
-      </div>
-
-      <div class="fact_nd_tittle">
-        <h2 id="top">საინტერესო ფაქტები</h2>
-        <img
-          class="fact_mn_pc"
-          src="../assets/images/45769039_1235016983330731_1471345084237611008_n.png"
-        />
-
-        <div class="book_nd_ornament">
-          <img src="../assets/images/fdAsset 1.png" />
+  <div>
+    <div class="facts_fluid">
+      <div class="book_nd_main_content">
+        <!-- background bottom -->
+        <div class="book_nd_main_content_bottom_bg">
+          <img src="../assets/images/orn_red2.png" />
         </div>
-      </div>
-      <div class="facts_text_wrapper" v-if="factTrue">
-        <div
-          class="facts_nd_main_text"
-          v-for="list in collection"
-          :key="list.id"
-        >
-          <div class="facts_decor_top">
-            <img src="../assets/images/orn_red.png" />
-          </div>
 
-          <div class="facts_tittle">
-            <h3>{{ list.title_ka }}</h3>
-          </div>
+        <div class="fact_nd_tittle">
+          <h2 id="top">{{title}}</h2>
+          <img
+            class="fact_mn_pc"
+            src="../assets/images/45769039_1235016983330731_1471345084237611008_n.png"
+          />
 
-          <div class="facts_nd_info">
-            <p>{{ list.text_ka }}</p>
+          <div class="book_nd_ornament">
+            <img src="../assets/images/fdAsset 1.png" />
           </div>
         </div>
-      </div>
-      <div v-if="!factTrue" class="error_info">
-        <h2>ინფორმაცა ვერ მოიძებნა</h2>
-      </div>
+        <div class="facts_text_wrapper" v-if="factTrue">
+          <div class="facts_nd_main_text" v-for="list in collection" :key="list.id">
+            <div class="facts_decor_top">
+              <img src="../assets/images/orn_red.png" />
+            </div>
 
-      <div class="facts_pagination">
-        <div class="btn-group">
-          <a href="#top" id="smoothlink" v-smooth-scroll="{ offset: -10 }">
-            <button
-              class="btn btn-primary"
-              v-for="(p, index) in pagination.pages"
-              @click.prevent="setPage(p)"
-              :key="index"
-              ref="pagButton"
-            >
-              {{ p }}
-            </button>
-          </a>
+            <div class="facts_tittle">
+              <h3>{{ list.title_ka }}</h3>
+            </div>
+
+            <div class="facts_nd_info">
+              <p>{{ list.text_ka }}</p>
+            </div>
+          </div>
+        </div>
+        <div v-if="!factTrue" class="error_info">
+          <h2>ინფორმაცა ვერ მოიძებნა</h2>
+        </div>
+
+        <div class="facts_pagination">
+          <div class="btn-group">
+            <a href="#top" id="smoothlink" v-smooth-scroll="{ offset: -10 }">
+              <button
+                class="btn btn-primary"
+                v-for="(p, index) in pagination.pages"
+                @click.prevent="setPage(p)"
+                :key="index"
+                ref="pagButton"
+              >{{ p }}</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
+    <appCommonPhrazes :PhrazhesData="BottomPhrazhes"></appCommonPhrazes>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import CommonPhrazes from "../components/HomeComponents/HomePhases.vue";
 export default {
+  components: {
+    appCommonPhrazes: CommonPhrazes
+  },
   data() {
     return {
       data: [],
       perPage: 3,
       pagination: {},
       currentpage: this.$route.query.currentpage,
-      factTrue: false
+      factTrue: false,
+      title: this.$store.state.pagesTitles[5],
+      BottomPhrazhes: null
     };
   },
   computed: {
@@ -78,11 +81,6 @@ export default {
   },
 
   methods: {
-    // scrollHandler() {
-    //   this.$router.replace({
-    //     hash: "tornike"
-    //   });
-    // },
     setPage(p) {
       this.currentpage = p;
       this.$router
@@ -147,6 +145,17 @@ export default {
         }, 10);
       })
       .catch(function(error) {});
+
+    axios
+      .get("http://datainfo.online/api/ka/facts_phrases")
+      .then(response => {
+        if (response.statusText == "OK") {
+          this.BottomPhrazhes = response.data.data[0];
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 };
 </script>

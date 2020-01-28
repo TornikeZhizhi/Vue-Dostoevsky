@@ -1,17 +1,18 @@
 import Vue from "vue";
-// import Vue from "vue/dist/vue.esm.js";
 import VueRouter from "vue-router";
 import App from "./App.vue";
 import { routes } from "./router.js";
 import vueSmoothScroll from "vue2-smooth-scroll";
+import { store } from "./store/store.js";
+import { mixin } from "./store/mixin.js";
 Vue.use(vueSmoothScroll);
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes,
   mode: "history",
   scrollBehavior(to, from, savedPosition) {
-    console.log(to);
     return { x: 0, y: 0 };
 
     // if (to.path == "/books") {
@@ -38,5 +39,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: "#app",
   router,
-  render: h => h(App)
+  store,
+  render: h => h(App),
+  mixins: [mixin]
 });

@@ -3,13 +3,11 @@
     <div class="biography_fluid">
       <div class="biography_nd_main_content">
         <div class="biography_img">
-          <img
-            src="../assets/images/46657256_1962923843827383_4554362696245444608_n.png"
-          />
+          <img src="../assets/images/46657256_1962923843827383_4554362696245444608_n.png" />
         </div>
 
         <div class="biography_nd_tittle">
-          <h2>ბიოგრაფია</h2>
+          <h2>{{title}}</h2>
 
           <div class="bio_tittle_orn">
             <div class="candle">
@@ -33,11 +31,7 @@
         </div>
 
         <div class="biography_nd_main_text">
-          <div
-            class="bio_nd_text_wrapper"
-            v-for="data in BiographyInfo"
-            :key="data.id"
-          >
+          <div class="bio_nd_text_wrapper" v-for="data in BiographyInfo" :key="data.id">
             <div class="bio_nd_end_orn">
               <img src="../assets/images/Asset 2.png" />
             </div>
@@ -53,7 +47,7 @@
         </div>
       </div>
     </div>
-    <appCommonPhrazes :PhrazhesData="BiographyPhrazhes"></appCommonPhrazes>
+    <appCommonPhrazes :PhrazhesData="BottomPhrazhes"></appCommonPhrazes>
   </div>
 </template>
 
@@ -66,8 +60,9 @@ export default {
   },
   data() {
     return {
-      BiographyInfo: null,
-      BiographyPhrazhes: null
+      BiographyInfo: [],
+      BottomPhrazhes: null,
+      title: this.$store.state.pagesTitles[2]
     };
   },
   created() {
@@ -86,7 +81,7 @@ export default {
       .get("http://datainfo.online/api/ka/abouts_phrases")
       .then(response => {
         if (response.statusText == "OK") {
-          this.BiographyPhrazhes = response.data.data[0];
+          this.BottomPhrazhes = response.data.data[0];
         }
       })
       .catch(function(error) {
