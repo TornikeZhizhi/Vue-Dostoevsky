@@ -51,7 +51,7 @@ export default {
   created() {
     var _this = this;
     axios
-      .get("http://datainfo.online/api/ka/events/" + this.$route.params.id + "")
+      .get("http://datainfo.online/api/ka/books/" + this.$route.params.id + "")
       .then(response => {
         _this.innerData = response.data.data;
         console.log(response);
