@@ -9,9 +9,16 @@
         <div class="col-lg-6 col-md-12 hover13" v-for="data in CharachtersData" :key="data.id">
           <div class="reviews_box scoll_review_left">
             <div class="review_readmore">
-              <a href="character/როგოჟინი" class="btn-6">
+              <router-link
+                class="btn-6"
+                tag="a"
+                :to="{
+                path: '/characters/'+ data.title_ka+'',
+              
+          }"
+              >
                 <span class="btn-62">გაიგეთ მეტი</span>
-              </a>
+              </router-link>
             </div>
             <div class="d-flex flex-column">
               <div class="reviews_img">

@@ -235,7 +235,7 @@ html, body {
     margin-top: 10px; }
     .events_nd_info .event_nd_text::-webkit-scrollbar {
       width: 1px; }
-    .events_nd_info .event_nd_text p, .events_nd_info .event_nd_text span {
+    .events_nd_info .event_nd_text p, .events_nd_inollfo .event_nd_text span {
       user-select: none;
       font-family: 'Conv_bpg_nino_medium_caps';
       font-weight: bold;
@@ -3051,7 +3051,7 @@ audio {
     transform: translateY(20px) rotate(270deg); } }
 /* width */
 ::-webkit-scrollbar {
-  width: 5px; }
+  width: 10px; }
 
 /* Track */
 ::-webkit-scrollbar-track {

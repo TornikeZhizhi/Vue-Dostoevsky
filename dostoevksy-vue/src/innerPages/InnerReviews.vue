@@ -28,7 +28,11 @@
       </div>
     </div>
 
-    <div v-if="!innerData">no</div>
+    <div class="book_nd_fluid" v-if="!innerData">
+      <div class="book_nd_main_content error_info">
+        <h2>ინფორმაცია ვერ მოიძებნა</h2>
+      </div>
+    </div>
   </div>
 </template>
 
