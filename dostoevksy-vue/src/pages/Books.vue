@@ -90,10 +90,10 @@ export default {
     };
   },
   methods: {
-    booksHandler(arg) {
-      this.$router.push({ name: "booksInner", query: { id: "private" } });
-      console.log(arg);
-    }
+    // booksHandler(arg) {
+    //   this.$router.push({ name: "booksInner", query: { id: "private" } });
+    //   console.log(arg);
+    // }
   },
   created() {
     axios
