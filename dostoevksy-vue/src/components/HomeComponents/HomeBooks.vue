@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-12 book_col">
           <h3 class="text-center">
-            <a href="books/">{{title}}</a>
+            <router-link tag="a" to="/books">{{title}}</router-link>
           </h3>
 
           <div
@@ -88,7 +88,7 @@ export default {
   data() {
     return {
       homeBooksData: [],
-      title: this.$store.state.pagesTitles[3]
+      title: null
     };
   },
   methods: {
@@ -100,12 +100,15 @@ export default {
     }
   },
   created() {
+    setTimeout(() => {
+      this.title = this.$store.state.pagesTitles[3];
+    }, 1000);
+
     var _this = this;
     axios
       .get("http://datainfo.online/api/ka/home_books")
       .then(response => {
         _this.homeBooksData = response.data.data;
-        console.log(_this.homeBooksData);
       })
       .catch(error => {
         console.log(error);

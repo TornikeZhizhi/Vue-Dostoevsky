@@ -185,7 +185,7 @@ export default {
       .then(response => {
         this.NavData = response.data.data;
         this.NavData[0].slug_en = "/home";
-        console.log(this.NavData);
+        // console.log(this.NavData);
         for (let i = 0; i < response.data.data.length; i++) {
           this.NavData[i].faIcons = this.FaIcons[i];
           this.$store.state.pagesTitles.push(this.NavData[i].title_ka);

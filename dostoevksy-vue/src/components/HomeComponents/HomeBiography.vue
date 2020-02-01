@@ -2,7 +2,7 @@
   <div class="container-fluid section3">
     <div class="container bio_container_parent text-center">
       <h2 class="bio_tittle">
-        <a href="biography/">{{title}}</a>
+        <router-link tag="a" to="/biography">{{title}}</router-link>
       </h2>
 
       <div class="row">
@@ -67,9 +67,9 @@
                   </div>
                 </div>
 
-                <a href="biography/" class="btn-6">
+                <router-link class="btn-6" tag="a" to="/biography">
                   <span class="btn-62">გაიგეთ მეტი</span>
-                </a>
+                </router-link>
               </div>
             </div>
           </div>
@@ -80,11 +80,29 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
-      title: this.$store.state.pagesTitles[2]
+      title: null,
+      homeBiography: []
     };
+  },
+  created() {
+    setTimeout(() => {
+      this.title = this.$store.state.pagesTitles[2];
+    }, 1000);
+
+    var _this = this;
+    axios
+      .get("http://datainfo.online/api/ka/home_abouts")
+      .then(response => {
+        _this.homeBiography = response.data.data;
+        console.log(_this.homeBiography);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 </script>
