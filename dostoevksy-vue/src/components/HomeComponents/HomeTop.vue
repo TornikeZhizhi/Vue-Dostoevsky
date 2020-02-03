@@ -3,13 +3,14 @@
     <div class="info_box">
       <h2>{{ homeTopText.data.title_ka }}</h2>
       <div class="main_info_wrapper">
-        <p>
-          {{ homeTopText.data.text_ka }}
-        </p>
+        <p>{{ homeTopText.data.text_ka | StringFilter }}</p>
       </div>
-      <a @click="biographyHandler()" class="btn-6"
-        ><span class="btn-62">გაიგეთ მეტი<span></span></span
-      ></a>
+      <a @click="biographyHandler()" class="btn-6">
+        <span class="btn-62">
+          გაიგეთ მეტი
+          <span></span>
+        </span>
+      </a>
     </div>
   </div>
 </template>
@@ -25,6 +26,11 @@ export default {
   methods: {
     biographyHandler() {
       this.$router.push("/biography");
+    }
+  },
+  filters: {
+    StringFilter(value) {
+      return value.slice(0, 270) + "...";
     }
   },
   created() {

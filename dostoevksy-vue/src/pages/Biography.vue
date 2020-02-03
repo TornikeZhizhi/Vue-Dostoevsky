@@ -6,7 +6,7 @@
           <img src="../assets/images/46657256_1962923843827383_4554362696245444608_n.png" />
         </div>
 
-        <div class="biography_nd_tittle">
+        <div class="biography_nd_tittle" v-if="title">
           <h2>{{title}}</h2>
 
           <div class="bio_tittle_orn">
@@ -62,10 +62,13 @@ export default {
     return {
       BiographyInfo: [],
       BottomPhrazhes: null,
-      title: this.$store.state.pagesTitles[2]
+      title: null
     };
   },
   created() {
+    setTimeout(() => {
+      this.title = this.$store.state.pagesTitles[2];
+    }, 1000);
     axios
       .get("http://datainfo.online/api/ka/abouts")
       .then(response => {

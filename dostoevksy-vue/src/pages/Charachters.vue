@@ -53,12 +53,15 @@ export default {
   data() {
     return {
       CharachtersData: null,
-      title: this.$store.state.pagesTitles[1],
+      title: null,
       BottomPhrazhes: null
     };
   },
 
   created() {
+    setTimeout(() => {
+      this.title = this.$store.state.pagesTitles[1];
+    }, 1000);
     axios
       .get("http://datainfo.online/api/ka/characters")
       .then(response => {

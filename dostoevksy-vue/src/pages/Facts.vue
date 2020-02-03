@@ -7,7 +7,7 @@
           <img src="../assets/images/orn_red2.png" />
         </div>
 
-        <div class="fact_nd_tittle">
+        <div class="fact_nd_tittle" v-if="title">
           <h2 id="top">{{title}}</h2>
           <img
             class="fact_mn_pc"
@@ -70,7 +70,7 @@ export default {
       pagination: {},
       currentpage: this.$route.query.currentpage,
       factTrue: false,
-      title: this.$store.state.pagesTitles[5],
+      title: null,
       BottomPhrazhes: null
     };
   },
@@ -126,6 +126,9 @@ export default {
   },
 
   created() {
+    setTimeout(() => {
+      this.title = this.$store.state.pagesTitles[5];
+    }, 1000);
     var _this = this;
     axios
       .get("http://datainfo.online/api/ka/facts")

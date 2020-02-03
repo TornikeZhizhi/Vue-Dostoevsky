@@ -70,7 +70,7 @@
                   <p>{{data.text_ka}}</p>
                 </div>
 
-                <a href @click="commonRouterHandler(data.title_ka)">
+                <a href class="btn-6" @click="commonRouterHandler(data.title_ka)">
                   <span class="btn-62">გაიგეთ მეტი</span>
                 </a>
               </div>
@@ -93,7 +93,6 @@ export default {
   },
   methods: {
     commonRouterHandler(arg) {
-      console.log(arg);
       this.$router.push({
         path: "/books/" + arg + ""
       });

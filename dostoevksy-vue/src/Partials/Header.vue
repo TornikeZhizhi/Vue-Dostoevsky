@@ -41,37 +41,37 @@
                   </router-link>
                   <router-link tag="li" class="link" active-class="active" to="/biography">
                     <a href>
-                      <i class="fas fa-home"></i>
+                      <i class="fas fa-feather"></i>
                       ბიოგრაფია
                     </a>
                   </router-link>
                   <router-link tag="li" class="link" active-class="active" to="/characters">
                     <a href>
-                      <i class="fas fa-home"></i>
+                      <i class="fas fa-user-alt"></i>
                       პერსონაჟები
                     </a>
                   </router-link>
                   <router-link tag="li" class="link" active-class="active" to="/books">
                     <a href>
-                      <i class="fas fa-home"></i>
+                      <i class="fas fa-book"></i>
                       წიგნები
                     </a>
                   </router-link>
                   <router-link tag="li" class="link" active-class="active" to="/reviews">
                     <a href>
-                      <i class="fas fa-home"></i>
+                      <i class="fas fa-star"></i>
                       რეცენზიები
                     </a>
                   </router-link>
                   <router-link tag="li" class="link" active-class="active" to="/facts">
                     <a href>
-                      <i class="fas fa-home"></i>
+                      <i class="fas fa-church"></i>
                       საინტერესო ფაქტები
                     </a>
                   </router-link>
                   <router-link tag="li" class="link" active-class="active" to="/events">
                     <a href>
-                      <i class="fas fa-home"></i>
+                      <i class="fas fa-calendar-alt"></i>
                       ღონისძიებები
                     </a>
                   </router-link>

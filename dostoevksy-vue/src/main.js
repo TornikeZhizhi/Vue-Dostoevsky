@@ -12,18 +12,19 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   routes,
   mode: "history",
-  scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 };
 
-    // if (to.path == "/books") {
-    //   return { x: 0, y: 0 };
-    // }
-    // console.log(to.path, to.hash);
-    // if (to.path == "/facts") {
-    //   return savedPosition;
-    // } else {
-    //   return { x: 0, y: 0 };
-    // }
+  scrollBehavior(to, from, savedPosition) {
+    // return { x: 0, y: 0 };
+    // console.log(to, from);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (savedPosition) {
+          resolve(savedPosition);
+        } else {
+          resolve({ x: 0, y: 0 });
+        }
+      }, 100);
+    });
   }
 });
 

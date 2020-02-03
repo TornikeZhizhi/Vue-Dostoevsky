@@ -54,6 +54,7 @@
                   <p>{{ data.text_ka }}</p>
                 </div>
                 <router-link
+                  class="btn-6"
                   tag="a"
                   :to="{
                 path: '/books/'+ data.title_ka+'',
@@ -86,16 +87,14 @@ export default {
     return {
       BooksData: [],
       BottomPhrazhes: null,
-      title: this.$store.state.pagesTitles[3]
+      title: null
     };
   },
-  methods: {
-    // booksHandler(arg) {
-    //   this.$router.push({ name: "booksInner", query: { id: "private" } });
-    //   console.log(arg);
-    // }
-  },
+  methods: {},
   created() {
+    setTimeout(() => {
+      this.title = this.$store.state.pagesTitles[3];
+    }, 1000);
     axios
       .get("http://datainfo.online/api/ka/books")
       .then(response => {
@@ -111,6 +110,7 @@ export default {
       .then(response => {
         if (response.statusText == "OK") {
           this.BottomPhrazhes = response.data.data[0];
+          console.log(this.BottomPhrazhes);
         }
       })
       .catch(function(error) {
