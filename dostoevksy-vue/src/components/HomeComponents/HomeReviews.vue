@@ -1,8 +1,10 @@
 <template>
-  <div class="container-fluid reviews_fluid reviews_sv text-center page-section">
+  <div
+    class="container-fluid reviews_fluid reviews_sv text-center page-section"
+  >
     <div class="reviews_home_tittle">
       <h2>
-        <a href="reviews/">{{title}}</a>
+        <a href="reviews/">{{ title }}</a>
       </h2>
     </div>
     <div
@@ -11,27 +13,35 @@
       style="visibility: visible; animation-name: fadeIn;"
     >
       <div class="row">
-        <div class="col-lg-6 col-md-12 hover13" v-for="data in homeReviewsData" :key="data.id">
+        <div
+          class="col-lg-6 col-md-12 hover13"
+          v-for="data in homeReviewsData"
+          :key="data.id"
+        >
           <div class="reviews_box scoll_review_left">
             <div class="review_readmore">
-              <a href class="btn-6" @click="commonRouterHandler(data.title_ka)">
+              <a
+                href
+                class="btn-6"
+                @click.prevent="commonRouterHandler(data.title_ka)"
+              >
                 <span class="btn-62">გაიგეთ მეტი</span>
               </a>
             </div>
             <div class="d-flex flex-column">
               <div class="reviews_img">
-                <a href="review/ვლადიმერ_სოლოვიოვი">
+                <a href @click.prevent="commonRouterHandler(data.title_ka)">
                   <img :src="data.image" />
                 </a>
               </div>
-              <a href="review/ვლადიმერ_სოლოვიოვი">
+              <a href @click.prevent="commonRouterHandler(data.title_ka)">
                 <i class="fas fa-users"></i>
-                {{data.title_ka}}
+                {{ data.title_ka }}
               </a>
             </div>
 
             <div class="review_text">
-              <p>{{data.text_ka | StringFilter}}</p>
+              <p>{{ data.text_ka | StringFilter }}</p>
             </div>
           </div>
         </div>
@@ -78,5 +88,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

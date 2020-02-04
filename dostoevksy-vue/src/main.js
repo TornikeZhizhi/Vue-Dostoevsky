@@ -14,7 +14,7 @@ const router = new VueRouter({
   mode: "history",
 
   scrollBehavior(to, from, savedPosition) {
-    // return { x: 0, y: 0 };
+    return { x: 0, y: 0 };
     // console.log(to, from);
     return new Promise((resolve, reject) => {
       setTimeout(() => {

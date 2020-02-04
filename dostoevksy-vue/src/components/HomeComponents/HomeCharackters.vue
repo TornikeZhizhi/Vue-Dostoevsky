@@ -56,8 +56,6 @@ export default {
       .get("http://datainfo.online/api/ka/home_characters")
       .then(response => {
         this.homeCharacktersData = response.data.data;
-        console.log(this.homeCharacktersData);
-        console.log(this.test);
       })
       .catch(function(error) {
         console.log(error);

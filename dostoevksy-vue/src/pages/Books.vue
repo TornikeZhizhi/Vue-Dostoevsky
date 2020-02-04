@@ -49,7 +49,14 @@
               </ul>
 
               <div class="book_infos">
-                <h4>{{ data.title_ka }}</h4>
+                <router-link
+                  tag="h4"
+                  :to="{
+                path: '/books/'+ data.title_ka+'',
+              
+          }"
+                >{{ data.title_ka }}</router-link>
+
                 <div class="book_text_wrapper">
                   <p>{{ data.text_ka }}</p>
                 </div>

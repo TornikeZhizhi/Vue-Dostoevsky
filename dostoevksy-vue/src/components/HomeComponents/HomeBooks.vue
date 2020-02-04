@@ -98,6 +98,7 @@ export default {
       });
     }
   },
+
   created() {
     setTimeout(() => {
       this.title = this.$store.state.pagesTitles[3];

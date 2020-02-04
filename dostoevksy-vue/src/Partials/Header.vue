@@ -15,7 +15,10 @@
               </div>
             </div>
 
-            <div class="col-lg-10 col-3 d-flex align-items-center navbar" id="myNavbar">
+            <div
+              class="col-lg-10 col-3 d-flex align-items-center navbar"
+              id="myNavbar"
+            >
               <nav class="defaulf_nav">
                 <ul>
                   <!-- <router-link
@@ -33,43 +36,79 @@
                     </a>
                   </router-link>-->
 
-                  <router-link tag="li" class="link" active-class="active" exact to="/home">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    exact
+                    to="/home"
+                  >
                     <a href>
                       <i class="fas fa-home"></i>
                       მთავარი
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/biography">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/biography"
+                  >
                     <a href>
                       <i class="fas fa-feather"></i>
                       ბიოგრაფია
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/characters">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/characters"
+                  >
                     <a href>
                       <i class="fas fa-user-alt"></i>
                       პერსონაჟები
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/books">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/books"
+                  >
                     <a href>
                       <i class="fas fa-book"></i>
                       წიგნები
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/reviews">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/reviews"
+                  >
                     <a href>
                       <i class="fas fa-star"></i>
                       რეცენზიები
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/facts">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/facts"
+                  >
                     <a href>
                       <i class="fas fa-church"></i>
                       საინტერესო ფაქტები
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/events">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/events"
+                  >
                     <a href>
                       <i class="fas fa-calendar-alt"></i>
                       ღონისძიებები
@@ -77,17 +116,26 @@
                   </router-link>
                 </ul>
               </nav>
+              <!-- <div class="language_box_n" style="display:block">
+                <span @click="languageHandler('ka')">geo</span>
+                <span @click="languageHandler('en')">eng</span>
+              </div> -->
 
               <!-- Resp Menu -->
 
               <div class="resp_menu">
                 <div id="myNav" class="overlay">
-                  <!--<div class="language_box_n">-->
-                  <!--	<span>geo</span>-->
-                  <!--	<span>eng</span>-->
-                  <!--	<span>rus</span>-->
-                  <!--</div>-->
-                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                  <div class="language_box_n">
+                    <span @click="languageHandler('ka')">geo</span>
+                    <span @click="languageHandler('en')">eng</span>
+                    <!-- <span>rus</span> -->
+                  </div>
+                  <a
+                    href="javascript:void(0)"
+                    class="closebtn"
+                    onclick="closeNav()"
+                    >×</a
+                  >
                   <div class="overlay-content">
                     <ul>
                       <li>
@@ -129,7 +177,10 @@
                   </div>
                 </div>
 
-                <span class="hamburger_menu" style="font-size:40px;cursor:pointer;color: #ebc076;">
+                <span
+                  class="hamburger_menu"
+                  style="font-size:40px;cursor:pointer;color: #ebc076;"
+                >
                   <div></div>
                   <div></div>
                   <div></div>
@@ -159,6 +210,7 @@
 
 <script>
 import axios from "axios";
+import Vue from "vue";
 export default {
   data() {
     return {
@@ -174,12 +226,18 @@ export default {
       ]
     };
   },
+  methods: {
+    languageHandler(arg) {
+      this.$store.state.lang = arg;
+      // console.log(this.$store.state.lang);
+    }
+  },
 
   created() {
     // setTimeout(function() {
     //   document.getElementById("loader").style.display = "none";
     // }, 1000);
-
+    console.log(this.$store.state.lang);
     axios
       .get("http://datainfo.online/api/ka/pages")
       .then(response => {

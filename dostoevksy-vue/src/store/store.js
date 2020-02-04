@@ -4,6 +4,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    pagesTitles: []
+    pagesTitles: [],
+    lang: "ka"
   }
 });
