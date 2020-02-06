@@ -3,7 +3,9 @@
     <AppHeader></AppHeader>
 
     <!-- <transition name="fade"> -->
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
     <!-- </transition> -->
     <appFooter></appFooter>
   </div>

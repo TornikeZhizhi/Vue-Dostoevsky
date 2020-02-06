@@ -2,20 +2,26 @@
   <div class="container-fluid section3">
     <div class="container bio_container_parent text-center">
       <h2 class="bio_tittle">
-        <router-link tag="a" to="/biography">{{title}}</router-link>
+        <router-link tag="a" to="/biography">{{ title }}</router-link>
       </h2>
 
       <div class="row">
         <div class="col-md-12 bio_coll">
           <div class="row">
             <div class="col-md-6 bio_img_col d-flex justify-content-center">
-              <div
-                class="bio_img wow fadeInLeft"
-                data-wow-offset="300"
-                style="visibility: visible; animation-name: fadeInLeft;"
-              >
-                <img src="../../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg" />
-              </div>
+              <kinesis-container>
+                <kinesis-element :strength="15" type="depth_inv" :distance="10">
+                  <div
+                    class="bio_img wow fadeInLeft"
+                    data-wow-offset="300"
+                    style="visibility: visible; animation-name: fadeInLeft;"
+                  >
+                    <img
+                      src="../../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg"
+                    />
+                  </div>
+                </kinesis-element>
+              </kinesis-container>
             </div>
 
             <div class="col-md-6 bio_info_col">
@@ -29,10 +35,14 @@
                   <br />თეოდორ დოსტოევსკი
                 </h2>
 
-                <div class="chilhood" v-for="data in homeBiography" :key="data.id">
-                  <h3>{{data.title_ka}}</h3>
+                <div
+                  class="chilhood"
+                  v-for="data in homeBiography"
+                  :key="data.id"
+                >
+                  <h3>{{ data.title_ka }}</h3>
                   <div class="home_bio_wrapper">
-                    <p>{{data.text_ka}}</p>
+                    <p>{{ data.text_ka }}</p>
                   </div>
                 </div>
 
@@ -51,6 +61,9 @@
 <script>
 import axios from "axios";
 export default {
+  components: {
+    // parallaxElement
+  },
   data() {
     return {
       title: null,
