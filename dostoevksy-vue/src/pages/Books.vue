@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 book_col">
-          <h3 class="text-center">{{title}}</h3>
+          <h3 class="text-center">{{ title }}</h3>
           <div class="row book_box_row">
             <div
               class="col-lg-3 col-md-6 d-flex justify-content-center"
@@ -16,7 +16,9 @@
                     <ul class="hardcover_front">
                       <li>
                         <div class="coverDesign yellow">
-                          <img src="../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg" />
+                          <img
+                            src="../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg"
+                          />
                         </div>
                       </li>
                       <li></li>
@@ -52,10 +54,10 @@
                 <router-link
                   tag="h4"
                   :to="{
-                path: '/books/'+ data.title_ka+'',
-              
-          }"
-                >{{ data.title_ka }}</router-link>
+                    path: '/books/' + data.title_ka + ''
+                  }"
+                  >{{ data.title_ka }}</router-link
+                >
 
                 <div class="book_text_wrapper">
                   <p>{{ data.text_ka }}</p>
@@ -64,9 +66,8 @@
                   class="btn-6"
                   tag="a"
                   :to="{
-                path: '/books/'+ data.title_ka+'',
-              
-          }"
+                    path: '/books/' + data.title_ka + ''
+                  }"
                 >
                   <span class="btn-62">გაიგეთ მეტი</span>
                 </router-link>
@@ -106,7 +107,6 @@ export default {
       .get("http://datainfo.online/api/ka/books")
       .then(response => {
         this.BooksData = response.data.data;
-        console.log(response);
       })
       .catch(function(error) {
         console.log(error);

@@ -5,8 +5,9 @@ import { routes } from "./router.js";
 import vueSmoothScroll from "vue2-smooth-scroll";
 import { store } from "./store/store.js";
 import { mixin } from "./store/mixin.js";
-Vue.use(vueSmoothScroll);
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
+
+Vue.use(vueSmoothScroll);
 Vue.component("kinesis-container", KinesisContainer);
 Vue.component("kinesis-element", KinesisElement);
 
@@ -33,10 +34,12 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // document.getElementById("loader").style.display = "flex";
+  // if (document.getElementById("loader")) {
+  //   document.getElementById("loader").style.display = "flex";
+  // }
   // setTimeout(function() {
   //   document.getElementById("loader").style.display = "none";
-  // }, 2000);
+  // }, 300);
 
   next();
 });

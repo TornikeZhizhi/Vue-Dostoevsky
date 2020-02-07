@@ -25,7 +25,12 @@
           style="visibility: visible; animation-name: fadeInLeft;"
         >
           <div class="form_box">
-            <form class="forms" action method="post" @submit.prevent="postHandler()">
+            <form
+              class="forms"
+              action
+              method="post"
+              @submit.prevent="postHandler()"
+            >
               <input
                 type="text"
                 autocomplete="off"
@@ -34,7 +39,13 @@
                 placeholder="სახელი..."
                 id="name"
               />
-              <input type="email" v-model="email" name="email" placeholder="მაილი..." id="email" />
+              <input
+                type="email"
+                v-model="email"
+                name="email"
+                placeholder="მაილი..."
+                id="email"
+              />
               <input
                 type="text"
                 v-model="title"
@@ -42,7 +53,11 @@
                 placeholder="სათაური..."
                 id="subject"
               />
-              <textarea v-model="text" placeholder="დაწერე წერილი..." id="message"></textarea>
+              <textarea
+                v-model="text"
+                placeholder="დაწერე წერილი..."
+                id="message"
+              ></textarea>
               <input type="submit" value="გაგზავნა" id="sendm" />
             </form>
           </div>
@@ -55,29 +70,30 @@
         >
           <div class="info_right">
             <div class="contact_info_box">
-              <p>{{footerData.text_ka}}</p>
+              <p>{{ footerData.text_ka }}</p>
             </div>
 
             <div class="fa_icons">
-              <a target="_blank" v-bind:href="footerLink
-              ">
+              <a target="_blank" v-bind:href="footerLink">
                 <span>
                   <i class="fab fa-facebook"></i>
-                  {{footerData.facebook}}
+                  {{ footerData.facebook }}
                 </span>
               </a>
               <span>
                 <i class="fas fa-envelope"></i>
-                {{footerData.email}}
+                {{ footerData.email }}
               </span>
               <span>
                 <i class="fas fa-map-marker"></i>
-                {{footerData.location_ka}}
+                {{ footerData.location_ka }}
               </span>
             </div>
           </div>
         </div>
       </div>
+
+      <div><a class="scroltop" href @click="scrollToTop()">scroll top</a></div>
     </div>
   </div>
 </template>
@@ -97,6 +113,10 @@ export default {
   },
 
   methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
+
     postHandler() {
       const formData = {
         name: this.name,
@@ -134,4 +154,10 @@ export default {
 </script>
 
 <style>
+.scroltop {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 3000;
+}
 </style>

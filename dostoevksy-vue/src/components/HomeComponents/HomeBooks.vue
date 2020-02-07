@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-12 book_col">
           <h3 class="text-center">
-            <router-link tag="a" to="/books">{{title}}</router-link>
+            <router-link tag="a" to="/books">{{ title }}</router-link>
           </h3>
 
           <div
@@ -40,9 +40,9 @@
                     <ul class="page">
                       <li></li>
                       <li>
-                        <h4>{{data.title_ka}}</h4>
+                        <h4>{{ data.title_ka }}</h4>
                         <div class="book_r_content">
-                          <span>{{data.text_ka}}</span>
+                          <span>{{ data.text_ka }}</span>
                         </div>
                       </li>
                       <li></li>
@@ -65,12 +65,18 @@
               </ul>
 
               <div class="book_infos">
-                <h4 @click="commonRouterHandler(data.title_ka)">{{data.title_ka}}</h4>
+                <h4 @click="commonRouterHandler(data.title_ka)">
+                  {{ data.title_ka }}
+                </h4>
                 <div class="book_text_wrapper">
-                  <p>{{data.text_ka}}</p>
+                  <p>{{ data.text_ka }}</p>
                 </div>
 
-                <a href class="btn-6" @click="commonRouterHandler(data.title_ka)">
+                <a
+                  href
+                  class="btn-6"
+                  @click="commonRouterHandler(data.title_ka)"
+                >
                   <span class="btn-62">გაიგეთ მეტი</span>
                 </a>
               </div>
@@ -117,5 +123,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
