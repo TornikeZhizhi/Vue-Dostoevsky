@@ -51,7 +51,6 @@
             </div>
           </div>
         </div>
-        {{ test }}
       </div>
     </div>
     <appCommonPhrazes :PhrazhesData="BottomPhrazhes"></appCommonPhrazes>

@@ -6,6 +6,7 @@ import vueSmoothScroll from "vue2-smooth-scroll";
 import { store } from "./store/store.js";
 import { mixin } from "./store/mixin.js";
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
+import particlesJS from "particles.js";
 
 Vue.use(vueSmoothScroll);
 Vue.component("kinesis-container", KinesisContainer);

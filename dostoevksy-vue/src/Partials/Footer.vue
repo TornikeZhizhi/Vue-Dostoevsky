@@ -92,8 +92,6 @@
           </div>
         </div>
       </div>
-
-      <div><a class="scroltop" href @click="scrollToTop()">scroll top</a></div>
     </div>
   </div>
 </template>
@@ -113,10 +111,6 @@ export default {
   },
 
   methods: {
-    scrollToTop() {
-      window.scrollTo(0, 0);
-    },
-
     postHandler() {
       const formData = {
         name: this.name,

@@ -1,5 +1,6 @@
 <template>
   <div class="col-md-12 main_right_col" v-if="homeTopTextka">
+    <particles></particles>
     <div class="info_box">
       <h2>{{ homeTopTextMain.data.title_ka }}</h2>
       <div class="main_info_wrapper">
@@ -17,13 +18,16 @@
 
 <script>
 import axios from "axios";
-
+import particles from "./Particles.vue";
 export default {
   data() {
     return {
       homeTopTextka: null,
       homeTopTexten: null
     };
+  },
+  components: {
+    particles
   },
   computed: {
     homeTopTextMain() {
@@ -67,9 +71,19 @@ export default {
 </script>
 
 <style>
-#my-scrollbar {
-  width: 500px;
-  height: 500px;
-  overflow: auto;
+.main_right_col {
+  position: relative;
+}
+.info_box {
+  position: relative;
+  z-index: 100;
+}
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 </style>
