@@ -8,9 +8,13 @@
         <!-- // background-image -->
 
         <div class="event_tittle">
-          <h2>{{title}}</h2>
+          <h2>{{ title }}</h2>
         </div>
-        <div class="events_nd_main_wrapper" v-for="data in eventData" :key="data.id">
+        <div
+          class="events_nd_main_wrapper"
+          v-for="data in eventData"
+          :key="data.id"
+        >
           <div class="event_img">
             <img :src="data.image" />
           </div>
@@ -25,7 +29,10 @@
         </div>
       </div>
     </div>
-    <appCommonPhrazes :PhrazhesData="BottomPhrazhes"></appCommonPhrazes>
+    <appCommonPhrazes
+      v-if="BottomPhrazhes"
+      :PhrazhesData="BottomPhrazhes.title_ka"
+    ></appCommonPhrazes>
   </div>
 </template>
 

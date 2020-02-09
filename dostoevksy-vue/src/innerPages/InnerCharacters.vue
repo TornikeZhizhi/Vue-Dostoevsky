@@ -5,7 +5,7 @@
         <div class="characters_nd_main_img">
           <img :src="innerData.image" />
 
-          <h4>{{innerData.title_ka}}</h4>
+          <h4>{{ innerData.title_ka }}</h4>
           <span></span>
         </div>
 
@@ -19,6 +19,10 @@
         <h2>ინფორმაცია ვერ მოიძებნა</h2>
       </div>
     </div>
+    <appCommonPhrazes
+      v-if="BottomPhrazhes"
+      :PhrazhesData="BottomPhrazhes.title_ka"
+    ></appCommonPhrazes>
   </div>
 </template>
 
@@ -31,7 +35,8 @@ export default {
   },
   data() {
     return {
-      innerData: []
+      innerData: [],
+      BottomPhrazhes: null
     };
   },
   created() {
@@ -43,15 +48,23 @@ export default {
       )
       .then(response => {
         _this.innerData = response.data.data;
-        console.log(response);
       })
       .catch(function(error) {
         console.log(error);
         _this.innerData = false;
       });
+    axios
+      .get("http://datainfo.online/api/ka/characters_phrases")
+      .then(response => {
+        if (response.statusText == "OK") {
+          _this.BottomPhrazhes = response.data.data[0];
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>

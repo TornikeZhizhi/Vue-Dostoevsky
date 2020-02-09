@@ -2,13 +2,25 @@
   <div>
     <appHomeTop></appHomeTop>
     <appHomeBook></appHomeBook>
-    <appHomePhrazes v-if="HomePhrazesData" :PhrazhesData="HomePhrazesData[0]"></appHomePhrazes>
+    <appHomePhrazes
+      v-if="HomePhrazesData"
+      :PhrazhesData="HomePhrazesData[0].title_ka"
+    ></appHomePhrazes>
     <appHomeBiography></appHomeBiography>
-    <appHomePhrazes v-if="HomePhrazesData" :PhrazhesData="HomePhrazesData[1]"></appHomePhrazes>
+    <appHomePhrazes
+      v-if="HomePhrazesData"
+      :PhrazhesData="HomePhrazesData[1].title_ka"
+    ></appHomePhrazes>
     <appHomeCharachters></appHomeCharachters>
-    <appHomePhrazes v-if="HomePhrazesData" :PhrazhesData="HomePhrazesData[2]"></appHomePhrazes>
+    <appHomePhrazes
+      v-if="HomePhrazesData"
+      :PhrazhesData="HomePhrazesData[2].title_ka"
+    ></appHomePhrazes>
     <appHomeReviews></appHomeReviews>
-    <appHomePhrazes v-if="HomePhrazesData" :PhrazhesData="HomePhrazesData[3]"></appHomePhrazes>
+    <appHomePhrazes
+      v-if="HomePhrazesData"
+      :PhrazhesData="HomePhrazesData[3].title_ka"
+    ></appHomePhrazes>
   </div>
 </template>
 

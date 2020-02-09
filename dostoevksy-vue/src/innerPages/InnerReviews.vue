@@ -18,8 +18,8 @@
             <!--</figure>-->
           </div>
 
-          <h3>{{innerData.title_ka}}</h3>
-          <span>{{innerData.book_ka}}</span>
+          <h3>{{ innerData.title_ka }}</h3>
+          <span>{{ innerData.book_ka }}</span>
         </div>
 
         <div class="reviews_nd_main_text">
@@ -67,5 +67,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

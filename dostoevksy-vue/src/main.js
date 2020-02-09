@@ -5,10 +5,11 @@ import { routes } from "./router.js";
 import vueSmoothScroll from "vue2-smooth-scroll";
 import { store } from "./store/store.js";
 import { mixin } from "./store/mixin.js";
-import { KinesisContainer, KinesisElement } from "vue-kinesis";
+import { KinesisContainer, KinesisElement, KinesisAudio } from "vue-kinesis";
 
 Vue.use(vueSmoothScroll);
 Vue.component("kinesis-container", KinesisContainer);
+Vue.component("kinesis-audior", KinesisAudio);
 Vue.component("kinesis-element", KinesisElement);
 
 Vue.use(VueRouter);

@@ -6,7 +6,11 @@
 
     <div class="container review_cont">
       <div class="row">
-        <div class="col-lg-6 col-md-12 hover13" v-for="data in ReviewsData" :key="data.id">
+        <div
+          class="col-lg-6 col-md-12 hover13"
+          v-for="data in ReviewsData"
+          :key="data.id"
+        >
           <div class="reviews_box scoll_review_left">
             <div class="review_readmore">
               <a class="btn-6" href @click="commonRouterHandler(data.title_ka)">
@@ -32,7 +36,10 @@
         </div>
       </div>
     </div>
-    <appCommonPhrazes :PhrazhesData="BottomPhrazhes"></appCommonPhrazes>
+    <appCommonPhrazes
+      v-if="BottomPhrazhes"
+      :PhrazhesData="BottomPhrazhes.title_ka"
+    ></appCommonPhrazes>
   </div>
 </template>
 <script>
