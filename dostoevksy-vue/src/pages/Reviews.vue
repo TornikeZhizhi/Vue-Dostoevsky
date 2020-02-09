@@ -6,45 +6,27 @@
 
     <div class="container review_cont">
       <div class="row">
-        <div
-          class="col-lg-6 col-md-12 hover13"
-          v-for="data in ReviewsData"
-          :key="data.id"
-        >
+        <div class="col-lg-6 col-md-12 hover13" v-for="data in ReviewsData" :key="data.id">
           <div class="reviews_box scoll_review_left">
             <div class="review_readmore">
-              <router-link
-                class="btn-6"
-                tag="a"
-                :to="{
-                  path: '/reviews/' + data.title_ka + ''
-                }"
-              >
+              <a class="btn-6" href @click="commonRouterHandler(data.title_ka)">
                 <span class="btn-62">გაიგეთ მეტი</span>
-              </router-link>
-              <!-- <a href="review/ვლადიმერ_სოლოვიოვი" class="btn-6">
-               
-              </a>-->
+              </a>
             </div>
             <div class="d-flex flex-column">
               <div class="reviews_img">
-                <router-link
-                  tag="a"
-                  :to="{
-                    path: '/reviews/' + data.title_ka + ''
-                  }"
-                >
-                  <img :src="data.image" alt="" />
-                </router-link>
+                <a href @click="commonRouterHandler(data.title_ka)">
+                  <img :src="data.image" alt />
+                </a>
               </div>
-              <a href>
+              <a href @click="commonRouterHandler(data.title_ka)">
                 <i class="fas fa-users"></i>
                 {{ data.title_ka }}
               </a>
             </div>
 
             <div class="review_text">
-              <p>{{ data.text_ka }}</p>
+              <div v-html="data.text_ka"></div>
             </div>
           </div>
         </div>
@@ -67,8 +49,14 @@ export default {
       title: null
     };
   },
+  methods: {
+    commonRouterHandler(arg) {
+      this.$router.push({
+        path: "/reviews/" + arg + ""
+      });
+    }
+  },
   created() {
-
     setTimeout(() => {
       this.title = this.$store.state.pagesTitles[4];
     }, 1000);

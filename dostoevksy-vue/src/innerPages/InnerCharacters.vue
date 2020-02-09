@@ -10,7 +10,7 @@
         </div>
 
         <div class="characters_nd_main_text">
-          <p>{{innerData.text_ka}}</p>
+          <div v-html="innerData.text_ka"></div>
         </div>
       </div>
     </div>
@@ -36,6 +36,7 @@ export default {
   },
   created() {
     var _this = this;
+    this.innerData = [];
     axios
       .get(
         "http://datainfo.online/api/ka/characters/" + this.$route.params.id + ""

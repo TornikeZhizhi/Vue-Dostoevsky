@@ -547,7 +547,7 @@ html, body {
     background-position: center center;
     margin: 0 auto;
     border-radius: 5px;
-    padding: 50px 0px 140px;
+    padding: 50px 0px 10px;
     position: relative; }
   .biography_fluid .biography_nd_main_text {
     padding: 70px 0 55px;

@@ -42,7 +42,7 @@
                       <li>
                         <h4>{{ data.title_ka }}</h4>
                         <div class="book_r_content">
-                          <span>{{ data.text_ka }}</span>
+                          <span v-html="data.text_ka"></span>
                         </div>
                       </li>
                       <li></li>
@@ -65,18 +65,12 @@
               </ul>
 
               <div class="book_infos">
-                <h4 @click="commonRouterHandler(data.title_ka)">
-                  {{ data.title_ka }}
-                </h4>
+                <h4 @click="commonRouterHandler(data.title_ka)">{{ data.title_ka }}</h4>
                 <div class="book_text_wrapper">
-                  <p>{{ data.text_ka }}</p>
+                  <div v-html="data.text_ka"></div>
                 </div>
 
-                <a
-                  href
-                  class="btn-6"
-                  @click="commonRouterHandler(data.title_ka)"
-                >
+                <a href class="btn-6" @click="commonRouterHandler(data.title_ka)">
                   <span class="btn-62">გაიგეთ მეტი</span>
                 </a>
               </div>

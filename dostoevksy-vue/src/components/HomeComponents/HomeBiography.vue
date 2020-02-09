@@ -16,9 +16,7 @@
                     data-wow-offset="300"
                     style="visibility: visible; animation-name: fadeInLeft;"
                   >
-                    <img
-                      src="../../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg"
-                    />
+                    <img src="../../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg" />
                   </div>
                 </kinesis-element>
               </kinesis-container>
@@ -35,14 +33,10 @@
                   <br />თეოდორ დოსტოევსკი
                 </h2>
 
-                <div
-                  class="chilhood"
-                  v-for="data in homeBiography"
-                  :key="data.id"
-                >
+                <div class="chilhood" v-for="data in homeBiography" :key="data.id">
                   <h3>{{ data.title_ka }}</h3>
                   <div class="home_bio_wrapper">
-                    <p>{{ data.text_ka }}</p>
+                    <div v-html="data.text_ka"></div>
                   </div>
                 </div>
 
@@ -61,9 +55,6 @@
 <script>
 import axios from "axios";
 export default {
-  components: {
-    // parallaxElement
-  },
   data() {
     return {
       title: null,

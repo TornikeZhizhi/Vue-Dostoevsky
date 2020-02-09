@@ -23,7 +23,7 @@
         </div>
 
         <div class="reviews_nd_main_text">
-          <p>{{innerData.text_ka}}</p>
+          <div v-html="innerData.text_ka"></div>
         </div>
       </div>
     </div>
@@ -50,6 +50,7 @@ export default {
   },
   created() {
     var _this = this;
+
     axios
       .get(
         "http://datainfo.online/api/ka/reviews/" + this.$route.params.id + ""

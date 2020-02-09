@@ -16,9 +16,7 @@
                     <ul class="hardcover_front">
                       <li>
                         <div class="coverDesign yellow">
-                          <img
-                            src="../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg"
-                          />
+                          <img :src="data.image" />
                         </div>
                       </li>
                       <li></li>
@@ -28,7 +26,7 @@
                       <li>
                         <h4>{{ data.title_ka }}</h4>
                         <div class="book_r_content">
-                          <span>{{ data.text_ka }}</span>
+                          <span v-html="data.text_ka"></span>
                         </div>
                       </li>
                       <li></li>
@@ -51,29 +49,14 @@
               </ul>
 
               <div class="book_infos">
-                <router-link
-                  tag="h4"
-                  :to="{
-                    path: '/books/' + data.title_ka + ''
-                  }"
-                  >{{ data.title_ka }}</router-link
-                >
-
+                <h4 @click="commonRouterHandler(data.title_ka)">{{data.title_ka}}</h4>
                 <div class="book_text_wrapper">
-                  <p>{{ data.text_ka }}</p>
+                  <div v-html="data.text_ka "></div>
                 </div>
-                <router-link
-                  class="btn-6"
-                  tag="a"
-                  :to="{
-                    path: '/books/' + data.title_ka + ''
-                  }"
-                >
+
+                <a href class="btn-6" @click="commonRouterHandler(data.title_ka)">
                   <span class="btn-62">გაიგეთ მეტი</span>
-                </router-link>
-                <!-- <a href class="btn-6" @click.prevent="booksHandler(data.title_ka)">
-                  <span class="btn-62">გაიგეთ მეტი</span>
-                </a>-->
+                </a>
               </div>
             </div>
           </div>
@@ -86,6 +69,7 @@
 
 <script>
 import axios from "axios";
+
 import CommonPhrazes from "../components/HomeComponents/HomePhases.vue";
 export default {
   components: {
@@ -98,7 +82,13 @@ export default {
       title: null
     };
   },
-  methods: {},
+  methods: {
+    commonRouterHandler(arg) {
+      this.$router.push({
+        path: "/books/" + arg + ""
+      });
+    }
+  },
   created() {
     setTimeout(() => {
       this.title = this.$store.state.pagesTitles[3];
@@ -107,6 +97,7 @@ export default {
       .get("http://datainfo.online/api/ka/books")
       .then(response => {
         this.BooksData = response.data.data;
+        console.log(this.BooksData);
       })
       .catch(function(error) {
         console.log(error);

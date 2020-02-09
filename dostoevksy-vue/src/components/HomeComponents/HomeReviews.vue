@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="container-fluid reviews_fluid reviews_sv text-center page-section"
-  >
+  <div class="container-fluid reviews_fluid reviews_sv text-center page-section">
     <div class="reviews_home_tittle">
       <h2>
         <a href="reviews/">{{ title }}</a>
@@ -13,18 +11,10 @@
       style="visibility: visible; animation-name: fadeIn;"
     >
       <div class="row">
-        <div
-          class="col-lg-6 col-md-12 hover13"
-          v-for="data in homeReviewsData"
-          :key="data.id"
-        >
+        <div class="col-lg-6 col-md-12 hover13" v-for="data in homeReviewsData" :key="data.id">
           <div class="reviews_box scoll_review_left">
             <div class="review_readmore">
-              <a
-                href
-                class="btn-6"
-                @click.prevent="commonRouterHandler(data.title_ka)"
-              >
+              <a href class="btn-6" @click.prevent="commonRouterHandler(data.title_ka)">
                 <span class="btn-62">გაიგეთ მეტი</span>
               </a>
             </div>
@@ -41,7 +31,9 @@
             </div>
 
             <div class="review_text">
-              <p>{{ data.text_ka | StringFilter }}</p>
+              <div v-html="data.text_ka">
+                <!-- | StringFilter -->
+              </div>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@
             </div>
 
             <div class="facts_nd_info">
-              <p>{{ list.text_ka }}</p>
+              <div v-html="list.text_ka"></div>
             </div>
           </div>
         </div>

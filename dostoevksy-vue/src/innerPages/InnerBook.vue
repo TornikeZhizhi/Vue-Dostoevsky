@@ -15,13 +15,17 @@
 
         <div class="book_nd_tittle">
           <div class="book_nd_img" id="bok">
-            <img :src="innerData.image" />
+            <kinesis-container>
+              <kinesis-element :strength="10" type="depth" :distance="10">
+                <img :src="innerData.image" />
+              </kinesis-element>
+            </kinesis-container>
           </div>
           <h2>{{innerData.title_ka}}</h2>
         </div>
 
         <div class="book_nd_main_text">
-          <p>{{innerData.text_ka}}</p>
+          <p v-html="innerData.text_ka"></p>
         </div>
       </div>
     </div>
@@ -50,7 +54,7 @@ export default {
 
   created() {
     var _this = this;
-    console.log(this.$route.params.id )
+    console.log(this.$route.params.id);
     axios
       .get("http://datainfo.online/api/ka/books/" + this.$route.params.id + "")
       .then(response => {

@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid characters_fluid" v-if="CharachtersData">
     <div class="review_tittle text-center">
-      <h2>{{title}}</h2>
+      <h2>{{ title }}</h2>
     </div>
 
     <div class="container review_cont">
@@ -9,31 +9,24 @@
         <div class="col-lg-6 col-md-12 hover13" v-for="data in CharachtersData" :key="data.id">
           <div class="reviews_box scoll_review_left">
             <div class="review_readmore">
-              <router-link
-                class="btn-6"
-                tag="a"
-                :to="{
-                path: '/characters/'+ data.title_ka+'',
-              
-          }"
-              >
+              <a class="btn-6" href @click="commonRouterHandler(data.title_ka)">
                 <span class="btn-62">გაიგეთ მეტი</span>
-              </router-link>
+              </a>
             </div>
             <div class="d-flex flex-column">
               <div class="reviews_img">
-                <a href="character/როგოჟინი">
+                <a href @click="commonRouterHandler(data.title_ka)">
                   <img src="../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg" />
                 </a>
               </div>
-              <a href="character/როგოჟინი">
+              <a href @click="commonRouterHandler(data.title_ka)">
                 <i class="fas fa-users"></i>
-                {{data.title_ka}}
+                {{ data.title_ka }}
               </a>
             </div>
 
             <div class="review_text">
-              <p>{{data.text_ka}}</p>
+              <div v-html="data.text_ka"></div>
             </div>
           </div>
         </div>
@@ -57,8 +50,16 @@ export default {
       BottomPhrazhes: null
     };
   },
+  methods: {
+    commonRouterHandler(arg) {
+      this.$router.push({
+        path: "/characters/" + arg + ""
+      });
+    }
+  },
 
   created() {
+    console.log(localStorage);
     setTimeout(() => {
       this.title = this.$store.state.pagesTitles[1];
     }, 1000);
@@ -89,5 +90,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
