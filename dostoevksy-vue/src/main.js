@@ -6,6 +6,11 @@ import vueSmoothScroll from "vue2-smooth-scroll";
 import { store } from "./store/store.js";
 import { mixin } from "./store/mixin.js";
 import { KinesisContainer, KinesisElement, KinesisAudio } from "vue-kinesis";
+import VueScrollProgressBar from "./Partials/VueProgress.vue";
+
+// Vue.config.productionTip = false;
+
+Vue.component("vue-scroll-progress-bar", VueScrollProgressBar);
 
 Vue.use(vueSmoothScroll);
 Vue.component("kinesis-container", KinesisContainer);

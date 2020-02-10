@@ -11,7 +11,7 @@
 
       <!--</div>-->
     </div>
-
+    <vue-scroll-progress-bar />
     <div id="footer_pegion">
       <img src="../assets/images/Asset 2deco.png" />
     </div>
@@ -153,5 +153,13 @@ export default {
   right: 30px;
   bottom: 30px;
   z-index: 3000;
+}
+.progress-bar-container--container {
+  z-index: 2000 !important;
+}
+
+.progress-bar-container--container > div {
+  transition: all 0.4s;
+  background: antiquewhite !important;
 }
 </style>
