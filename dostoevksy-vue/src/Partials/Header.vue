@@ -15,61 +15,85 @@
               </div>
             </div>
 
-            <div class="col-lg-10 col-3 d-flex align-items-center navbar" id="myNavbar">
+            <div
+              class="col-lg-10 col-3 d-flex align-items-center navbar"
+              id="myNavbar"
+            >
               <nav class="defaulf_nav">
                 <ul>
-                  <!-- <router-link
-                    v-for="data in NavData"
+                  <router-link
                     tag="li"
                     class="link"
-                    :key="data.id"
-                    :to="data.slug_en"
-                    :exact="data.slug_en == '/home' ? false : true"
                     active-class="active"
+                    exact
+                    to="/home"
                   >
-                    <a href>
-                      <i :class="data.faIcons"></i>
-                      {{ data.title_ka }}
-                    </a>
-                  </router-link>-->
-
-                  <router-link tag="li" class="link" active-class="active" exact to="/home">
                     <a href>
                       <i class="fas fa-home"></i>
                       მთავარი
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/biography">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/biography"
+                  >
                     <a href>
                       <i class="fas fa-feather"></i>
                       ბიოგრაფია
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/characters">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/characters"
+                  >
                     <a href>
                       <i class="fas fa-user-alt"></i>
                       პერსონაჟები
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/books">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/books"
+                  >
                     <a href>
                       <i class="fas fa-book"></i>
                       წიგნები
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/reviews">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/reviews"
+                  >
                     <a href>
                       <i class="fas fa-star"></i>
                       რეცენზიები
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/facts">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/facts"
+                  >
                     <a href>
                       <i class="fas fa-church"></i>
                       საინტერესო ფაქტები
                     </a>
                   </router-link>
-                  <router-link tag="li" class="link" active-class="active" to="/events">
+                  <router-link
+                    tag="li"
+                    class="link"
+                    active-class="active"
+                    to="/events"
+                  >
                     <a href>
                       <i class="fas fa-calendar-alt"></i>
                       ღონისძიებები
@@ -84,61 +108,108 @@
 
               <!-- Resp Menu -->
 
-              <div class="resp_menu">
+              <div class="resp_menu" v-if="menu">
                 <div id="myNav" class="overlay">
                   <div class="language_box_n">
                     <span @click="languageHandler('ka')">geo</span>
                     <span @click="languageHandler('en')">eng</span>
                     <!-- <span>rus</span> -->
                   </div>
-                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                  <a href class="closebtn" @click.prevent="menu = false">×</a>
                   <div class="overlay-content">
                     <ul>
-                      <li>
-                        <a href="/home" class="active">
-                          <i class="fas fa-home"></i>მთავარი
+                      <router-link
+                        tag="li"
+                        class="link"
+                        active-class="active"
+                        exact
+                        to="/home"
+                      >
+                        <a href @click="menuHandler()">
+                          <i class="fas fa-home"></i>
+                          მთავარი
                         </a>
-                      </li>
-                      <li>
-                        <a href="/biography">
-                          <i class="fas fa-feather"></i>ბიოგრაფია
+                      </router-link>
+                      <router-link
+                        tag="li"
+                        class="link"
+                        active-class="active"
+                        to="/biography"
+                      >
+                        <a href @click="menuHandler()">
+                          <i class="fas fa-feather"></i>
+                          ბიოგრაფია
                         </a>
-                      </li>
-                      <li>
-                        <a href="/characters">
-                          <i class="fas fa-user-alt"></i>პერსონაჟები
+                      </router-link>
+                      <router-link
+                        tag="li"
+                        class="link"
+                        active-class="active"
+                        to="/characters"
+                      >
+                        <a href @click="menuHandler()">
+                          <i class="fas fa-user-alt"></i>
+                          პერსონაჟები
                         </a>
-                      </li>
-                      <li>
-                        <a href="/books">
-                          <i class="fas fa-book"></i>წიგნები
+                      </router-link>
+                      <router-link
+                        tag="li"
+                        class="link"
+                        active-class="active"
+                        to="/books"
+                      >
+                        <a href @click="menuHandler()">
+                          <i class="fas fa-book"></i>
+                          წიგნები
                         </a>
-                      </li>
-                      <li>
-                        <a href="/reviews">
-                          <i class="fas fa-star"></i>რეცენზიები
+                      </router-link>
+                      <router-link
+                        tag="li"
+                        class="link"
+                        active-class="active"
+                        to="/reviews"
+                      >
+                        <a href @click="menuHandler()">
+                          <i class="fas fa-star"></i>
+                          რეცენზიები
                         </a>
-                      </li>
-                      <li>
-                        <a href="/interesting-facts">
-                          <i class="fas fa-church"></i>საინტერესო ფაქტები
+                      </router-link>
+                      <router-link
+                        tag="li"
+                        class="link"
+                        active-class="active"
+                        to="/facts"
+                      >
+                        <a href @click="menuHandler()">
+                          <i class="fas fa-church"></i>
+                          საინტერესო ფაქტები
                         </a>
-                      </li>
-                      <li>
-                        <a href="/events">
-                          <i class="fas fa-calendar-alt"></i>ღონისძიებები
+                      </router-link>
+                      <router-link
+                        tag="li"
+                        class="link"
+                        active-class="active"
+                        to="/events"
+                      >
+                        <a href @click="menuHandler()">
+                          <i class="fas fa-calendar-alt"></i>
+                          ღონისძიებები
                         </a>
-                      </li>
+                      </router-link>
                     </ul>
                   </div>
                 </div>
-
-                <span class="hamburger_menu" style="font-size:40px;cursor:pointer;color: #ebc076;">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </span>
               </div>
+
+              <span
+                class="hamburger_menu"
+                @click="menuHandler()"
+                style="font-size:40px;cursor:pointer;color: #ebc076;"
+              >
+                <div></div>
+                <div></div>
+                <div></div>
+              </span>
               <!-- Resp Menu -->
             </div>
           </div>
@@ -168,6 +239,7 @@ export default {
   data() {
     return {
       NavData: null,
+      menu: false,
       FaIcons: [
         "fas fa-home",
         "fas fa-feather",
@@ -183,6 +255,9 @@ export default {
     languageHandler(arg) {
       this.$store.state.lang = arg;
       // console.log(this.$store.state.lang);
+    },
+    menuHandler() {
+      this.menu = !this.menu;
     }
   },
 

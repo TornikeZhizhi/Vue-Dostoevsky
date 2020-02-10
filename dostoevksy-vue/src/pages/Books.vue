@@ -50,18 +50,12 @@
                 </ul>
 
                 <div class="book_infos">
-                  <h4 @click="commonRouterHandler(data.title_ka)">
-                    {{ data.title_ka }}
-                  </h4>
+                  <h4 @click="commonRouterHandler(data.title_ka)">{{ data.title_ka }}</h4>
                   <div class="book_text_wrapper">
                     <div v-html="data.text_ka"></div>
                   </div>
 
-                  <a
-                    href
-                    class="btn-6"
-                    @click="commonRouterHandler(data.title_ka)"
-                  >
+                  <a href class="btn-6" @click="commonRouterHandler(data.title_ka)">
                     <span class="btn-62">გაიგეთ მეტი</span>
                   </a>
                 </div>
@@ -71,10 +65,7 @@
         </div>
       </div>
     </div>
-    <appCommonPhrazes
-      v-if="BottomPhrazhes"
-      :PhrazhesData="BottomPhrazhes.title_ka"
-    ></appCommonPhrazes>
+    <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
   </div>
 </template>
 
@@ -104,11 +95,16 @@ export default {
     setTimeout(() => {
       this.title = this.$store.state.pagesTitles[3];
     }, 1000);
+
+    var _this = this;
     axios
       .get("http://datainfo.online/api/ka/books")
       .then(response => {
-        this.BooksData = response.data.data;
-        console.log(this.BooksData);
+        _this.BooksData = response.data.data;
+        _this.BooksData.map((el, index) => {
+          var shrinkText = el.text_ka.slice(0, 370) + "...";
+          el.text_ka = shrinkText;
+        });
       })
       .catch(function(error) {
         console.log(error);
@@ -119,7 +115,6 @@ export default {
       .then(response => {
         if (response.statusText == "OK") {
           this.BottomPhrazhes = response.data.data[0];
-          console.log(response);
         }
       })
       .catch(function(error) {

@@ -2154,6 +2154,11 @@ figcaption p {
 }
 
 /* Media Queries */
+@media screen and (min-width: 992px) {
+  .hamburger_menu {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 37.8125em) {
   .align > li {
     width: 100%;
@@ -2844,6 +2849,13 @@ body {
   padding-right: 5px;
 }
 
+.text_shrink {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 .btn-6 {
   display: inline-block;
   position: relative;
@@ -3120,14 +3132,23 @@ body {
   object-fit: cover;
 }
 .review_cont .reviews_box .review_text {
-  width: 75%;
+  width: 100%;
   padding: 0px 20px;
   overflow-y: scroll;
   height: 190px;
   position: relative;
 }
+
+.review_text br {
+  display: none;
+}
+.home_bio_wrapper span,
+.review_text span {
+  color: #fff !important;
+}
+
 .review_cont .reviews_box .review_text::-webkit-scrollbar {
-  width: 1px;
+  width: 3px;
 }
 .review_cont .reviews_box .review_text p,
 .review_cont .reviews_box .review_text span {
@@ -3552,7 +3573,7 @@ body {
 }
 
 .overlay {
-  height: 0%;
+  height: 100%;
   width: 100%;
   position: fixed;
   z-index: 2000;
@@ -3620,10 +3641,6 @@ body {
 .resp_menu .nav-item {
   width: 270px;
   text-align: left;
-}
-
-.resp_menu {
-  display: none;
 }
 
 .scroll_top {
@@ -3721,6 +3738,11 @@ body {
 @media screen and (max-width: 992px) {
   .bio_nd_text_wrapper {
     padding-bottom: 50px;
+  }
+
+  html,
+  body {
+    padding-top: 0;
   }
 
   .main_loader {
@@ -4540,5 +4562,3 @@ body {
     right: 29px !important;
   }
 }
-
-/*# sourceMappingURL=main.css.map */

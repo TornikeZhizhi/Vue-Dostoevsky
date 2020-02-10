@@ -23,7 +23,7 @@
             <span>{{ data.location_ka }}</span>
 
             <div class="event_nd_text">
-              <p>{{ data.text_ka }}</p>
+              <div v-html="data.text_ka"></div>
             </div>
           </div>
         </div>

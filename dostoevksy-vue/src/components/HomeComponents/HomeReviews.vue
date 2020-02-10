@@ -30,8 +30,8 @@
               </a>
             </div>
 
-            <div class="review_text">
-              <div v-html="data.text_ka">
+            <div>
+              <div class="review_text" v-html="data.text_ka">
                 <!-- | StringFilter -->
               </div>
             </div>
@@ -67,11 +67,15 @@ export default {
     setTimeout(() => {
       this.title = this.$store.state.pagesTitles[4];
     }, 1000);
+    var _this = this;
     axios
       .get("http://datainfo.online/api/ka/home_reviews")
       .then(response => {
-        this.homeReviewsData = response.data.data;
-        // console.log(this.homeReviewsData);
+        _this.homeReviewsData = response.data.data;
+        _this.homeReviewsData.map((el, index) => {
+          var shrinkText = el.text_ka.slice(0, 570) + "...";
+          el.text_ka = shrinkText;
+        });
       })
       .catch(function(error) {
         console.log(error);

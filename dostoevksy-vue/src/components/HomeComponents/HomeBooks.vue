@@ -42,7 +42,7 @@
                       <li>
                         <h4>{{ data.title_ka }}</h4>
                         <div class="book_r_content">
-                          <span v-html="data.text_ka"></span>
+                          <span class="text_shrink" v-html="data.text_ka"></span>
                         </div>
                       </li>
                       <li></li>
@@ -67,7 +67,7 @@
               <div class="book_infos">
                 <h4 @click="commonRouterHandler(data.title_ka)">{{ data.title_ka }}</h4>
                 <div class="book_text_wrapper">
-                  <div v-html="data.text_ka"></div>
+                  <div class v-html="data.text_ka"></div>
                 </div>
 
                 <a href class="btn-6" @click="commonRouterHandler(data.title_ka)">
@@ -109,6 +109,11 @@ export default {
       .get("http://datainfo.online/api/ka/home_books")
       .then(response => {
         _this.homeBooksData = response.data.data;
+
+        _this.homeBooksData.map((el, index) => {
+          var shrinkText = el.text_ka.slice(0, 270) + "...";
+          el.text_ka = shrinkText;
+        });
       })
       .catch(error => {
         console.log(error);

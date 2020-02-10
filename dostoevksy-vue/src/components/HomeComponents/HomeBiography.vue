@@ -71,6 +71,10 @@ export default {
       .get("http://datainfo.online/api/ka/home_abouts")
       .then(response => {
         _this.homeBiography = response.data.data;
+        _this.homeBiography.map((el, index) => {
+          var shrinkText = el.text_ka.slice(0, 670) + "...";
+          el.text_ka = shrinkText;
+        });
       })
       .catch(error => {
         console.log(error);
