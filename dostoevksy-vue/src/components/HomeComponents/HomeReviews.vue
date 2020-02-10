@@ -6,7 +6,7 @@
       </h2>
     </div>
     <div
-      class="container review_cont wow fadeInUp"
+      class="container review_cont container_shrink"
       data-wow-offset="300"
       style="visibility: visible; animation-name: fadeIn;"
     >

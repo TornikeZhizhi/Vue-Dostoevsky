@@ -6,7 +6,7 @@
       />
     </div>
 
-    <div class="container">
+    <div class="container container_shrink">
       <div class="row">
         <div class="col-md-12 book_col">
           <h3 class="text-center">

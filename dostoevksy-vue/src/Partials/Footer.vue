@@ -16,7 +16,7 @@
       <img src="../assets/images/Asset 2deco.png" />
     </div>
 
-    <div class="container cont_cont">
+    <div class="container cont_cont container_shrink">
       <h2>კონტაქტი</h2>
       <div class="row">
         <div
@@ -25,12 +25,7 @@
           style="visibility: visible; animation-name: fadeInLeft;"
         >
           <div class="form_box">
-            <form
-              class="forms"
-              action
-              method="post"
-              @submit.prevent="postHandler()"
-            >
+            <form class="forms" action method="post" @submit.prevent="postHandler()">
               <input
                 type="text"
                 autocomplete="off"
@@ -39,13 +34,7 @@
                 placeholder="სახელი..."
                 id="name"
               />
-              <input
-                type="email"
-                v-model="email"
-                name="email"
-                placeholder="მაილი..."
-                id="email"
-              />
+              <input type="email" v-model="email" name="email" placeholder="მაილი..." id="email" />
               <input
                 type="text"
                 v-model="title"
@@ -53,11 +42,7 @@
                 placeholder="სათაური..."
                 id="subject"
               />
-              <textarea
-                v-model="text"
-                placeholder="დაწერე წერილი..."
-                id="message"
-              ></textarea>
+              <textarea v-model="text" placeholder="დაწერე წერილი..." id="message"></textarea>
               <input type="submit" value="გაგზავნა" id="sendm" />
             </form>
           </div>

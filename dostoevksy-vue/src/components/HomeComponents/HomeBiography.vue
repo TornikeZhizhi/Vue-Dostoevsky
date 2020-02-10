@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid section3">
-    <div class="container bio_container_parent text-center">
+    <div class="container bio_container_parent text-center container_shrink">
       <h2 class="bio_tittle">
         <router-link tag="a" to="/biography">{{ title }}</router-link>
       </h2>
@@ -28,10 +28,10 @@
                 data-wow-offset="300"
                 style="visibility: visible; animation-name: fadeInRight;"
               >
-                <h2>
+                <!-- <h2>
                   ბიოგრაფია
                   <br />თეოდორ დოსტოევსკი
-                </h2>
+                </h2>-->
 
                 <div class="chilhood" v-for="data in homeBiography" :key="data.id">
                   <h3>{{ data.title_ka }}</h3>
