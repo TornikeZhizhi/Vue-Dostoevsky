@@ -482,7 +482,7 @@ body {
 .book_nd_main_text p,
 .book_nd_main_text span,
 .book_nd_main_text {
-  font-style: italic;
+
   text-align: justify;
   font-size: 16px;
   color: #352f4f;
@@ -805,7 +805,7 @@ body {
 .revies_nd_main_img img {
   border-radius: 50%;
   width: 180px;
-  box-shadow: 0px 0px 14px 1px #4e3838;
+  box-shadow: 1px 5px 14px 1px #4e3838;
   height: 220px;
   cursor: none;
   transition: all 0.2s;
@@ -989,6 +989,7 @@ body {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
+  filter: drop-shadow(0px 0px 5px #6b4618);
 }
 .characters_nd_fluid h4 {
   font-family: "Conv_bebas-neue-bold";

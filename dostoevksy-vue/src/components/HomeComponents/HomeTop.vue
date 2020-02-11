@@ -3,9 +3,7 @@
     <particles></particles>
     <div class="info_box">
       <h2>{{ homeTopTextMain.data.title_ka }}</h2>
-      <div class="main_info_wrapper">
-        <p>{{ homeTopTextMain.data.text_ka }}</p>
-      </div>
+      <div class="main_info_wrapper" v-html="homeTopTextMain.data.text_ka"></div>
       <a @click="biographyHandler()" class="btn-6">
         <span class="btn-62">
           გაიგეთ მეტი
@@ -49,10 +47,14 @@ export default {
   //   }
   // },
   created() {
+    var _this = this;
     axios
       .get("http://datainfo.online/api/ka/home_first")
       .then(response => {
-        this.homeTopTextka = response.data;
+        _this.homeTopTextka = response.data;
+
+        var shrinkText = _this.homeTopTextka.data.text_ka.slice(0, 360) + "...";
+        _this.homeTopTextka.data.text_ka = shrinkText;
       })
       .catch(function(error) {
         console.log(error);

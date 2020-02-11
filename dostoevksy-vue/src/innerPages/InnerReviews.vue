@@ -13,8 +13,11 @@
         <div class="revies_nd_main_img">
           <div class="review_img">
             <!--<figure>-->
-
-            <img :src="innerData.image" />
+            <kinesis-container style="display:inline-block">
+              <kinesis-element :strength="15" type="depth_inv" :distance="10">
+                <img :src="innerData.image" />
+              </kinesis-element>
+            </kinesis-container>
             <!--</figure>-->
           </div>
 
@@ -33,6 +36,7 @@
         <h2>ინფორმაცია ვერ მოიძებნა</h2>
       </div>
     </div>
+    <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
   </div>
 </template>
 
@@ -45,7 +49,8 @@ export default {
   },
   data() {
     return {
-      innerData: []
+      innerData: [],
+      BottomPhrazhes: null
     };
   },
   created() {
@@ -57,11 +62,21 @@ export default {
       )
       .then(response => {
         _this.innerData = response.data.data;
-        console.log(response);
       })
       .catch(function(error) {
         console.log(error);
         _this.innerData = false;
+      });
+
+    axios
+      .get("http://datainfo.online/api/ka/reviews_phrases")
+      .then(response => {
+        if (response.statusText == "OK") {
+          _this.BottomPhrazhes = response.data.data[0];
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
       });
   }
 };

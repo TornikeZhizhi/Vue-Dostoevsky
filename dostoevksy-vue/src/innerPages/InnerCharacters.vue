@@ -3,8 +3,11 @@
     <div class="container-fluid characters_nd_fluid" v-if="innerData">
       <div class="characters_nd_main_content">
         <div class="characters_nd_main_img">
-          <img :src="innerData.image" />
-
+          <kinesis-container style="display:inline-block">
+            <kinesis-element :strength="10" type="depth_inv" :distance="10">
+              <img :src="innerData.image" />
+            </kinesis-element>
+          </kinesis-container>
           <h4>{{ innerData.title_ka }}</h4>
           <span></span>
         </div>
@@ -19,10 +22,7 @@
         <h2>ინფორმაცია ვერ მოიძებნა</h2>
       </div>
     </div>
-    <appCommonPhrazes
-      v-if="BottomPhrazhes"
-      :PhrazhesData="BottomPhrazhes.title_ka"
-    ></appCommonPhrazes>
+    <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
   </div>
 </template>
 

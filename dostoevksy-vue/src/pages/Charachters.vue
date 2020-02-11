@@ -17,7 +17,7 @@
               <div class="d-flex flex-column">
                 <div class="reviews_img">
                   <a href @click="commonRouterHandler(data.title_ka)">
-                    <img src="../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg" />
+                    <img :src="data.image" />
                   </a>
                 </div>
                 <a href @click="commonRouterHandler(data.title_ka)">

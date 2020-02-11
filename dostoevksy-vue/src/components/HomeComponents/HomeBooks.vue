@@ -29,10 +29,7 @@
                     <ul class="hardcover_front">
                       <li>
                         <div class="coverDesign yellow">
-                          <img
-                            src="../../assets/images/22154171_1500562513371948_6027405587324085279_n.jpg"
-                            width="100%"
-                          />
+                          <img :src="data.image" width="100%" />
                         </div>
                       </li>
                       <li></li>

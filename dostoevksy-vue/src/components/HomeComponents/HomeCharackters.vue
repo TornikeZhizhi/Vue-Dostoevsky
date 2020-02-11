@@ -20,7 +20,7 @@
                 :items="4"
               >
                 <div v-for="(data, index) in homeCharacktersData" :key="index" style="width:100%">
-                  <img :src="data.img" @click="commonRouterHandler(data.title_ka)" />
+                  <img :src="data.image" @click="commonRouterHandler(data.title_ka)" />
                   <span>{{data.title_ka}}</span>
                 </div>
               </carousel>
@@ -74,5 +74,19 @@ export default {
 #demos img {
   border-radius: 10px;
   overflow: hidden;
+  object-fit: cover;
+}
+
+#demos span {
+  padding: 5px 0;
+
+  align-items: center;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  color: #fff;
+  margin-right: 5px;
+  font-style: italic;
+  font-family: "Conv_bebas-neue-bold";
 }
 </style>

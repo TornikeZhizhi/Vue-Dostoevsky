@@ -18,7 +18,7 @@
               <div class="icon btn" @click="stop">stop</div>
             </div>
           </div>
-        </main> -->
+        </main>-->
         <!-- // background-image -->
         <div class="book_nd_main_content_bg"></div>
 
@@ -47,10 +47,7 @@
       </div>
     </div>
 
-    <appCommonPhrazes
-      v-if="BottomPhrazhes"
-      :PhrazhesData="BottomPhrazhes.title_ka"
-    ></appCommonPhrazes>
+    <appCommonPhrazes v-if="innerData" :PhrazhesData="innerData.phrase_ka"></appCommonPhrazes>
   </div>
 </template>
 
@@ -212,26 +209,17 @@ export default {
       .get("http://datainfo.online/api/ka/books/" + this.$route.params.id + "")
       .then(response => {
         _this.innerData = response.data.data;
-        console.log(response);
       })
       .catch(function(error) {
         console.log(error);
         _this.innerData = false;
       });
-
-    axios
-      .get("http://datainfo.online/api/ka/books_phrases")
-      .then(response => {
-        if (response.statusText == "OK") {
-          this.BottomPhrazhes = response.data.data[0];
-          console.log(response);
-        }
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
   }
 };
 </script>
 
-<style></style>
+<style>
+#bok div {
+  height: 100%;
+}
+</style>
