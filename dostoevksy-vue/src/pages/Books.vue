@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container-fluid page-section only_books" giv-if="BooksData">
+    <div class="container-fluid page-section only_books common_fade" v-if="BooksData">
       <div class="container">
         <div class="row">
           <div class="col-md-12 book_col">
@@ -55,7 +55,7 @@
                     <div v-html="data.text_ka"></div>
                   </div>
 
-                  <a href class="btn-6" @click="commonRouterHandler(data.title_ka)">
+                  <a href class="btn-6" @click.prevent="commonRouterHandler(data.title_ka)">
                     <span class="btn-62">გაიგეთ მეტი</span>
                   </a>
                 </div>
@@ -63,6 +63,31 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div v-if="!BooksData">
+      <div class="bookshelf_wrapper">
+        <ul class="books_list">
+          <li class="book_item first">
+            <span>Tolstoy</span>
+          </li>
+          <li class="book_item second">
+            <span>Hesse</span>
+          </li>
+          <li class="book_item third">
+            <span>Kafka</span>
+          </li>
+          <li class="book_item fourth">
+            <span>Shakespeare</span>
+          </li>
+          <li class="book_item fifth">
+            <span>Faulkner</span>
+          </li>
+          <li class="book_item sixth">
+            <span>Dostoevsky</span>
+          </li>
+        </ul>
+        <div class="shelf"></div>
       </div>
     </div>
     <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
@@ -105,6 +130,10 @@ export default {
           var shrinkText = el.text_ka.slice(0, 370) + "...";
           el.text_ka = shrinkText;
         });
+
+        // setTimeout(function() {
+        //   document.getElementById("loader").style.display = "none";
+        // }, 500);
       })
       .catch(function(error) {
         console.log(error);

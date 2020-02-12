@@ -45,7 +45,7 @@ router.beforeEach((to, from, next) => {
   // }
   // setTimeout(function() {
   //   document.getElementById("loader").style.display = "none";
-  // }, 300);
+  // }, 1500);
 
   next();
 });

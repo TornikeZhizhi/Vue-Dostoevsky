@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container-fluid characters_fluid" v-if="CharachtersData">
+    <div class="container-fluid characters_fluid common_fade" v-if="CharachtersData">
       <div class="review_tittle text-center">
         <h2>{{ title }}</h2>
       </div>
@@ -20,7 +20,7 @@
                     <img :src="data.image" />
                   </a>
                 </div>
-                <a href @click="commonRouterHandler(data.title_ka)">
+                <a href @click.prevent="commonRouterHandler(data.title_ka)">
                   <i class="fas fa-users"></i>
                   {{ data.title_ka }}
                 </a>
@@ -32,6 +32,31 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div v-if="!CharachtersData">
+      <div class="bookshelf_wrapper">
+        <ul class="books_list">
+          <li class="book_item first">
+            <span>Tolstoy</span>
+          </li>
+          <li class="book_item second">
+            <span>Hesse</span>
+          </li>
+          <li class="book_item third">
+            <span>Kafka</span>
+          </li>
+          <li class="book_item fourth">
+            <span>Shakespeare</span>
+          </li>
+          <li class="book_item fifth">
+            <span>Faulkner</span>
+          </li>
+          <li class="book_item sixth">
+            <span>Dostoevsky</span>
+          </li>
+        </ul>
+        <div class="shelf"></div>
       </div>
     </div>
     <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
@@ -73,6 +98,9 @@ export default {
             var shrinkText = el.text_ka.slice(0, 570) + "...";
             el.text_ka = shrinkText;
           });
+          // setTimeout(function() {
+          //   document.getElementById("loader").style.display = "none";
+          // }, 500);
         }
       })
       .catch(function(error) {

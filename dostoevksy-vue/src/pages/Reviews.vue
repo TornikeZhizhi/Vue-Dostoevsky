@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container-fluid reviews_nd_fluid">
+    <div v-if="ReviewsData" class="container-fluid reviews_nd_fluid common_fade">
       <div class="review_tittle text-center">
         <h2>{{ title }}</h2>
       </div>
@@ -16,11 +16,11 @@
               </div>
               <div class="d-flex flex-column">
                 <div class="reviews_img">
-                  <a href @click="commonRouterHandler(data.title_ka)">
+                  <a href @click.prevent="commonRouterHandler(data.title_ka)">
                     <img :src="data.image" alt />
                   </a>
                 </div>
-                <a href @click="commonRouterHandler(data.title_ka)">
+                <a href @click.prevent="commonRouterHandler(data.title_ka)">
                   <i class="fas fa-users"></i>
                   {{ data.title_ka }}
                 </a>
@@ -32,6 +32,31 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div v-if="!ReviewsData">
+      <div class="bookshelf_wrapper">
+        <ul class="books_list">
+          <li class="book_item first">
+            <span>Tolstoy</span>
+          </li>
+          <li class="book_item second">
+            <span>Hesse</span>
+          </li>
+          <li class="book_item third">
+            <span>Kafka</span>
+          </li>
+          <li class="book_item fourth">
+            <span>Shakespeare</span>
+          </li>
+          <li class="book_item fifth">
+            <span>Faulkner</span>
+          </li>
+          <li class="book_item sixth">
+            <span>Dostoevsky</span>
+          </li>
+        </ul>
+        <div class="shelf"></div>
       </div>
     </div>
     <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
@@ -47,6 +72,7 @@ export default {
   data() {
     return {
       ReviewsData: null,
+      ReviewsData2: null,
       BottomPhrazhes: null,
       title: null
     };
@@ -71,6 +97,9 @@ export default {
           var shrinkText = el.text_ka.slice(0, 470) + "...";
           el.text_ka = shrinkText;
         });
+        // setTimeout(function() {
+        //   document.getElementById("loader").style.display = "none";
+        // }, 500);
       })
       .catch(function(error) {
         console.log(error);
@@ -86,6 +115,11 @@ export default {
       .catch(function(error) {
         console.log(error);
       });
+  },
+  mounted() {
+    // setTimeout(function() {
+    //   document.getElementById("loader").style.display = "none";
+    // }, 500);
   }
 };
 </script>

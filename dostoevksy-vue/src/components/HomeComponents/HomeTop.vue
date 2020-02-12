@@ -1,15 +1,42 @@
 <template>
-  <div class="col-md-12 main_right_col" v-if="homeTopTextka">
-    <particles></particles>
-    <div class="info_box">
-      <h2>{{ homeTopTextMain.data.title_ka }}</h2>
-      <div class="main_info_wrapper" v-html="homeTopTextMain.data.text_ka"></div>
-      <a @click="biographyHandler()" class="btn-6">
-        <span class="btn-62">
-          გაიგეთ მეტი
-          <span></span>
-        </span>
-      </a>
+  <div>
+    <div class="col-md-12 main_right_col common_fade" v-if="homeTopTextka">
+      <particles></particles>
+      <div class="info_box">
+        <h2>{{ homeTopTextMain.data.title_ka }}</h2>
+        <div class="main_info_wrapper" v-html="homeTopTextMain.data.text_ka"></div>
+        <a @click.prevent="biographyHandler()" class="btn-6">
+          <span class="btn-62">
+            გაიგეთ მეტი
+            <span></span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div v-if="!homeTopTextka">
+      <div class="bookshelf_wrapper">
+        <ul class="books_list">
+          <li class="book_item first">
+            <span>Tolstoy</span>
+          </li>
+          <li class="book_item second">
+            <span>Hesse</span>
+          </li>
+          <li class="book_item third">
+            <span>Kafka</span>
+          </li>
+          <li class="book_item fourth">
+            <span>Shakespeare</span>
+          </li>
+          <li class="book_item fifth">
+            <span>Faulkner</span>
+          </li>
+          <li class="book_item sixth">
+            <span>Dostoevsky</span>
+          </li>
+        </ul>
+        <div class="shelf"></div>
+      </div>
     </div>
   </div>
 </template>

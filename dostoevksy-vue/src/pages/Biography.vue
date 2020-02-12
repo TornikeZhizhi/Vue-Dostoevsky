@@ -1,6 +1,6 @@
 <template>
   <div v-if="BiographyInfo">
-    <div class="biography_fluid">
+    <div class="biography_fluid common_fade">
       <div class="biography_nd_main_content">
         <div class="biography_img">
           <img src="../assets/images/46657256_1962923843827383_4554362696245444608_n.png" />
@@ -52,6 +52,31 @@
         </div>
       </div>
     </div>
+    <div v-if="!BiographyInfo">
+      <div class="bookshelf_wrapper">
+        <ul class="books_list">
+          <li class="book_item first">
+            <span>Tolstoy</span>
+          </li>
+          <li class="book_item second">
+            <span>Hesse</span>
+          </li>
+          <li class="book_item third">
+            <span>Kafka</span>
+          </li>
+          <li class="book_item fourth">
+            <span>Shakespeare</span>
+          </li>
+          <li class="book_item fifth">
+            <span>Faulkner</span>
+          </li>
+          <li class="book_item sixth">
+            <span>Dostoevsky</span>
+          </li>
+        </ul>
+        <div class="shelf"></div>
+      </div>
+    </div>
     <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
   </div>
 </template>
@@ -80,6 +105,9 @@ export default {
       .then(response => {
         if (response.statusText == "OK") {
           this.BiographyInfo = response.data.data;
+          // setTimeout(function() {
+          //   document.getElementById("loader").style.display = "none";
+          // }, 500);
         }
       })
       .catch(function(error) {

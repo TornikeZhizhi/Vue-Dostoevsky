@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="facts_fluid">
+    <div class="facts_fluid common_fade" v-if="data">
       <div class="book_nd_main_content">
         <!-- background bottom -->
         <div class="book_nd_main_content_bottom_bg">
@@ -24,11 +24,7 @@
           </div>
         </div>
         <div class="facts_text_wrapper" v-if="factTrue">
-          <div
-            class="facts_nd_main_text"
-            v-for="list in collection"
-            :key="list.id"
-          >
+          <div class="facts_nd_main_text" v-for="list in collection" :key="list.id">
             <div class="facts_decor_top">
               <img src="../assets/images/orn_red.png" />
             </div>
@@ -55,18 +51,38 @@
                 @click.prevent="setPage(p)"
                 :key="index"
                 ref="pagButton"
-              >
-                {{ p }}
-              </button>
+              >{{ p }}</button>
             </a>
           </div>
         </div>
       </div>
     </div>
-    <appCommonPhrazes
-      v-if="BottomPhrazhes"
-      :PhrazhesData="BottomPhrazhes.title_ka"
-    ></appCommonPhrazes>
+    <div v-if="!data">
+      <div class="bookshelf_wrapper">
+        <ul class="books_list">
+          <li class="book_item first">
+            <span>Tolstoy</span>
+          </li>
+          <li class="book_item second">
+            <span>Hesse</span>
+          </li>
+          <li class="book_item third">
+            <span>Kafka</span>
+          </li>
+          <li class="book_item fourth">
+            <span>Shakespeare</span>
+          </li>
+          <li class="book_item fifth">
+            <span>Faulkner</span>
+          </li>
+          <li class="book_item sixth">
+            <span>Dostoevsky</span>
+          </li>
+        </ul>
+        <div class="shelf"></div>
+      </div>
+    </div>
+    <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
   </div>
 </template>
 
@@ -162,6 +178,9 @@ export default {
         }, 10);
 
         _this.title = _this.$store.state.pagesTitles[5];
+        // setTimeout(function() {
+        //   document.getElementById("loader").style.display = "none";
+        // }, 500);
       })
       .catch(function(error) {});
 

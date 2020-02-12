@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="events_fluid">
+    <div class="events_fluid common_fade" v-if="eventData">
       <div class="events_main_content">
         <!-- // background-image -->
         <div class="book_nd_main_content_bg"></div>
@@ -10,11 +10,7 @@
         <div class="event_tittle">
           <h2>{{ title }}</h2>
         </div>
-        <div
-          class="events_nd_main_wrapper"
-          v-for="data in eventData"
-          :key="data.id"
-        >
+        <div class="events_nd_main_wrapper" v-for="data in eventData" :key="data.id">
           <div class="event_img">
             <img :src="data.image" />
           </div>
@@ -29,10 +25,32 @@
         </div>
       </div>
     </div>
-    <appCommonPhrazes
-      v-if="BottomPhrazhes"
-      :PhrazhesData="BottomPhrazhes.title_ka"
-    ></appCommonPhrazes>
+    <div v-if="!eventData">
+      <div class="bookshelf_wrapper">
+        <ul class="books_list">
+          <li class="book_item first">
+            <span>Tolstoy</span>
+          </li>
+          <li class="book_item second">
+            <span>Hesse</span>
+          </li>
+          <li class="book_item third">
+            <span>Kafka</span>
+          </li>
+          <li class="book_item fourth">
+            <span>Shakespeare</span>
+          </li>
+          <li class="book_item fifth">
+            <span>Faulkner</span>
+          </li>
+          <li class="book_item sixth">
+            <span>Dostoevsky</span>
+          </li>
+        </ul>
+        <div class="shelf"></div>
+      </div>
+    </div>
+    <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
   </div>
 </template>
 
@@ -47,16 +65,18 @@ export default {
     return {
       eventData: null,
       BottomPhrazhes: null,
-      title: this.$store.state.pagesTitles[6]
+      title: null
     };
   },
   created() {
+    setTimeout(() => {
+      this.title = this.$store.state.pagesTitles[6];
+    }, 1000);
     var _this = this;
     axios
       .get("http://datainfo.online/api/ka/events")
       .then(response => {
         this.eventData = response.data.data;
-        console.log(this.eventData);
       })
       .catch(function(error) {});
 
