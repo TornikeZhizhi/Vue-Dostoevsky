@@ -67,7 +67,11 @@
                   <div class v-html="data.text_ka"></div>
                 </div>
 
-                <a href class="btn-6" @click.prevent="commonRouterHandler(data.title_ka)">
+                <a
+                  :href="'/books/' + data.title_ka"
+                  class="btn-6"
+                  @click.prevent="commonRouterHandler(data.title_ka)"
+                >
                   <span class="btn-62">გაიგეთ მეტი</span>
                 </a>
               </div>

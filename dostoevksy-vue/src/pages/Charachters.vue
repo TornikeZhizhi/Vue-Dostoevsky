@@ -10,7 +10,11 @@
           <div class="col-lg-6 col-md-12 hover13" v-for="data in CharachtersData" :key="data.id">
             <div class="reviews_box scoll_review_left">
               <div class="review_readmore">
-                <a class="btn-6" href @click="commonRouterHandler(data.title_ka)">
+                <a
+                  class="btn-6"
+                  :href="'/charackters/' + data.title_ka"
+                  @click="commonRouterHandler(data.title_ka)"
+                >
                   <span class="btn-62">გაიგეთ მეტი</span>
                 </a>
               </div>
@@ -20,7 +24,10 @@
                     <img :src="data.image" />
                   </a>
                 </div>
-                <a href @click.prevent="commonRouterHandler(data.title_ka)">
+                <a
+                  :href="'/charackters/' + data.title_ka"
+                  @click.prevent="commonRouterHandler(data.title_ka)"
+                >
                   <i class="fas fa-users"></i>
                   {{ data.title_ka }}
                 </a>

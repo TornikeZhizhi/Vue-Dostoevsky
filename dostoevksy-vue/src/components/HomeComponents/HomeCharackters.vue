@@ -5,7 +5,7 @@
         <div class="col-md-12 char_col">
           <div class="char_container text-center">
             <h2>
-              <a href="characters/">{{title}}</a>
+              <router-link tag="a" to="/characters">პერსონაჟები</router-link>
             </h2>
 
             <section id="demos" style="max-width:900px" v-if="homeCharacktersData">

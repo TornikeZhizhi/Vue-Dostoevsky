@@ -55,7 +55,11 @@
                     <div v-html="data.text_ka"></div>
                   </div>
 
-                  <a href class="btn-6" @click.prevent="commonRouterHandler(data.title_ka)">
+                  <a
+                    :href="'/books/' + data.title_ka"
+                    class="btn-6"
+                    @click.prevent="commonRouterHandler(data.title_ka)"
+                  >
                     <span class="btn-62">გაიგეთ მეტი</span>
                   </a>
                 </div>
@@ -116,6 +120,7 @@ export default {
       });
     }
   },
+
   created() {
     setTimeout(() => {
       this.title = this.$store.state.pagesTitles[3];
@@ -126,14 +131,12 @@ export default {
       .get("http://datainfo.online/api/ka/books")
       .then(response => {
         _this.BooksData = response.data.data;
+
         _this.BooksData.map((el, index) => {
           var shrinkText = el.text_ka.slice(0, 370) + "...";
           el.text_ka = shrinkText;
         });
-
-        // setTimeout(function() {
-        //   document.getElementById("loader").style.display = "none";
-        // }, 500);
+        console.log(_this.linkHandlerData);
       })
       .catch(function(error) {
         console.log(error);

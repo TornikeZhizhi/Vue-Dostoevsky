@@ -10,17 +10,27 @@
           <div class="col-lg-6 col-md-12 hover13" v-for="data in ReviewsData" :key="data.id">
             <div class="reviews_box scoll_review_left">
               <div class="review_readmore">
-                <a class="btn-6" href @click="commonRouterHandler(data.title_ka)">
+                <a
+                  class="btn-6"
+                  :href="'/reviews/' + data.title_ka"
+                  @click="commonRouterHandler(data.title_ka)"
+                >
                   <span class="btn-62">გაიგეთ მეტი</span>
                 </a>
               </div>
               <div class="d-flex flex-column">
                 <div class="reviews_img">
-                  <a href @click.prevent="commonRouterHandler(data.title_ka)">
+                  <a
+                    :href="'/reviews/' + data.title_ka"
+                    @click.prevent="commonRouterHandler(data.title_ka)"
+                  >
                     <img :src="data.image" alt />
                   </a>
                 </div>
-                <a href @click.prevent="commonRouterHandler(data.title_ka)">
+                <a
+                  :href="'/reviews/' + data.title_ka"
+                  @click.prevent="commonRouterHandler(data.title_ka)"
+                >
                   <i class="fas fa-users"></i>
                   {{ data.title_ka }}
                 </a>

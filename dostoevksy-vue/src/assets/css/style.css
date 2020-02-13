@@ -531,8 +531,15 @@ body {
 .facts_nd_main_text {
   max-width: 1100px;
   width: 90%;
-  margin: 70px auto 195px;
+  margin: 20px auto 195px;
   position: relative;
+}
+.common_fade h2 {
+  height:54px;
+}
+
+.main_right_col h2 {
+  height: unset !important;
 }
 
 .facts_text_wrapper .facts_nd_main_text:last-child {
