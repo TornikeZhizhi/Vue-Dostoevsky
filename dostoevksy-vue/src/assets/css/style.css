@@ -549,7 +549,7 @@ body {
 
  .bookshelf_wrapper {
   position: relative;
-  min-height: 85vh;
+  min-height: calc(100vh - 109px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -825,7 +825,7 @@ position: absolute;
 }
 .facts_nd_main_text p,
 .facts_nd_main_text span {
-  font-style: italic;
+  
   user-select: none;
   text-align: justify;
   font-size: 16px !important;
@@ -2811,6 +2811,7 @@ body {
   padding: 50px 73px;
   background-color: #ebc076;
   padding-bottom: 25px;
+  overflow: hidden;
 }
 .book_col .fraz_fluid h5 {
   font-size: 35px;
@@ -2826,12 +2827,7 @@ body {
   overflow: hidden;
   border-radius: 15px;
 }
-/* .book_col .fraz_fluid h5:hover {
-  border: 6px solid #000;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
-} */
+
 .book_col .fraz_fluid p {
   font-size: 36px;
   color: #000;
@@ -3231,6 +3227,7 @@ body {
     url(../images/old_paper2.jpeg);
   background-position: center;
   background-size: cover;
+  overflow: hidden;
 }
 .fraz_fluid h5 {
   font-size: 37px;
@@ -4003,7 +4000,17 @@ body {
   .bio_nd_text_wrapper {
     padding-bottom: 50px;
   }
+  .progress-bar-container--container {
+    display: none;
+  }
 
+  .common_fade h2 {
+    height: unset;
+}
+[data-aos^=fade][data-aos^=fade] {
+  opacity: 1 !important;
+  transform: translate(0) !important;
+}
   html,
   body {
     padding-top: 0;

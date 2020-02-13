@@ -1,7 +1,9 @@
 <template>
-  <div class="container-fluid reviews_fluid reviews_sv text-center page-section">
+  <div
+    class="container-fluid reviews_fluid reviews_sv text-center page-section"
+  >
     <div class="reviews_home_tittle">
-      <h2>
+      <h2 data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
         <router-link tag="a" to="/reviews">რეცენზიები</router-link>
       </h2>
     </div>
@@ -11,8 +13,17 @@
       style="visibility: visible; animation-name: fadeIn;"
     >
       <div class="row">
-        <div class="col-lg-6 col-md-12 hover13" v-for="data in homeReviewsData" :key="data.id">
-          <div class="reviews_box scoll_review_left">
+        <div
+          class="col-lg-6 col-md-12 hover13"
+          v-for="data in homeReviewsData"
+          :key="data.id"
+        >
+          <div
+            class="reviews_box scoll_review_left"
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+          >
             <div class="review_readmore">
               <a
                 :href="'/reviews/' + data.title_ka"

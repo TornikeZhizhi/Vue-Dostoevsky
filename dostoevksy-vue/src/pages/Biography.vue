@@ -3,11 +3,13 @@
     <div class="biography_fluid common_fade">
       <div class="biography_nd_main_content">
         <div class="biography_img">
-          <img src="../assets/images/46657256_1962923843827383_4554362696245444608_n.png" />
+          <img
+            src="../assets/images/46657256_1962923843827383_4554362696245444608_n.png"
+          />
         </div>
 
         <div class="biography_nd_tittle" v-if="title">
-          <h2>{{ title }}</h2>
+          <h2>ბიოგრაფია</h2>
 
           <div class="bio_tittle_orn">
             <div class="bio_tittle_decor">
@@ -36,7 +38,14 @@
         </div>
 
         <div class="biography_nd_main_text">
-          <div class="bio_nd_text_wrapper" v-for="data in BiographyInfo" :key="data.id">
+          <div
+            class="bio_nd_text_wrapper"
+            v-for="data in BiographyInfo"
+            :key="data.id"
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+          >
             <div class="bio_nd_end_orn">
               <img src="../assets/images/Asset 2.png" />
             </div>
@@ -77,7 +86,10 @@
         <div class="shelf"></div>
       </div>
     </div>
-    <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
+    <appCommonPhrazes
+      v-if="BottomPhrazhes"
+      :PhrazhesData="BottomPhrazhes.title_ka"
+    ></appCommonPhrazes>
   </div>
 </template>
 
@@ -128,5 +140,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

@@ -8,6 +8,9 @@ import { mixin } from "./store/mixin.js";
 import { KinesisContainer, KinesisElement, KinesisAudio } from "vue-kinesis";
 import VueScrollProgressBar from "./Partials/VueProgress.vue";
 
+import AOS from "aos";
+// import "aos/dist/aos.css";
+
 // Vue.config.productionTip = false;
 
 Vue.component("vue-scroll-progress-bar", VueScrollProgressBar);
@@ -51,6 +54,9 @@ router.beforeEach((to, from, next) => {
 });
 
 new Vue({
+  created() {
+    AOS.init();
+  },
   el: "#app",
   router,
   store,

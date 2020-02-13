@@ -1,14 +1,24 @@
 <template>
   <div class="container-fluid section3">
     <div class="container bio_container_parent text-center container_shrink">
-      <h2 class="bio_tittle">
+      <h2
+        class="bio_tittle"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+      >
         <router-link tag="a" to="/biography">ბიოგრაფია</router-link>
       </h2>
 
       <div class="row">
         <div class="col-md-12 bio_coll">
           <div class="row">
-            <div class="col-md-6 bio_img_col d-flex justify-content-center">
+            <div
+              class="col-md-6 bio_img_col d-flex justify-content-center"
+              data-aos="fade-up"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+            >
               <kinesis-container>
                 <kinesis-element :strength="15" type="depth_inv" :distance="10">
                   <div
@@ -16,24 +26,30 @@
                     data-wow-offset="300"
                     style="visibility: visible; animation-name: fadeInLeft;"
                   >
-                    <img src="../../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg" />
+                    <img
+                      src="../../assets/images/3fe46f4d3fe5c7e88054f88d0c36c3f5.jpg"
+                    />
                   </div>
                 </kinesis-element>
               </kinesis-container>
             </div>
 
-            <div class="col-md-6 bio_info_col">
+            <div
+              class="col-md-6 bio_info_col"
+              data-aos="fade-up"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+            >
               <div
                 class="bio_container wow fadeInRight"
                 data-wow-offset="300"
                 style="visibility: visible; animation-name: fadeInRight;"
               >
-                <!-- <h2>
-                  ბიოგრაფია
-                  <br />თეოდორ დოსტოევსკი
-                </h2>-->
-
-                <div class="chilhood" v-for="data in homeBiography" :key="data.id">
+                <div
+                  class="chilhood"
+                  v-for="data in homeBiography"
+                  :key="data.id"
+                >
                   <h3>{{ data.title_ka }}</h3>
                   <div class="home_bio_wrapper">
                     <div v-html="data.text_ka"></div>

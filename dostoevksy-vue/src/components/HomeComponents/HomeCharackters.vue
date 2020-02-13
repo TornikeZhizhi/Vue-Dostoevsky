@@ -4,11 +4,18 @@
       <div class="row">
         <div class="col-md-12 char_col">
           <div class="char_container text-center">
-            <h2>
+            <h2 data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
               <router-link tag="a" to="/characters">პერსონაჟები</router-link>
             </h2>
 
-            <section id="demos" style="max-width:900px" v-if="homeCharacktersData">
+            <section
+              id="demos"
+              style="max-width:900px"
+              v-if="homeCharacktersData"
+              data-aos="fade-up"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+            >
               <carousel
                 :autoplay="true"
                 :nav="false"
@@ -19,9 +26,16 @@
                 :loop="true"
                 :items="4"
               >
-                <div v-for="(data, index) in homeCharacktersData" :key="index" style="width:100%">
-                  <img :src="data.image" @click="commonRouterHandler(data.title_ka)" />
-                  <span>{{data.title_ka}}</span>
+                <div
+                  v-for="(data, index) in homeCharacktersData"
+                  :key="index"
+                  style="width:100%"
+                >
+                  <img
+                    :src="data.image"
+                    @click="commonRouterHandler(data.title_ka)"
+                  />
+                  <span>{{ data.title_ka }}</span>
                 </div>
               </carousel>
             </section>

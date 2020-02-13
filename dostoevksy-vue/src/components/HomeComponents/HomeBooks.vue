@@ -9,7 +9,12 @@
     <div class="container container_shrink">
       <div class="row">
         <div class="col-md-12 book_col">
-          <h3 class="text-center">
+          <h3
+            class="text-center"
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+          >
             <router-link tag="a" to="/books">{{ title }}</router-link>
           </h3>
 
@@ -22,6 +27,9 @@
               class="col-lg-3 col-md-6 d-flex justify-content-center"
               v-for="data in homeBooksData"
               :key="data.id"
+              data-aos="fade-up"
+              data-aos-delay="50"
+              data-aos-duration="1000"
             >
               <ul class="align">
                 <li>
@@ -39,7 +47,10 @@
                       <li>
                         <h4>{{ data.title_ka }}</h4>
                         <div class="book_r_content">
-                          <span class="text_shrink" v-html="data.text_ka"></span>
+                          <span
+                            class="text_shrink"
+                            v-html="data.text_ka"
+                          ></span>
                         </div>
                       </li>
                       <li></li>
@@ -62,7 +73,9 @@
               </ul>
 
               <div class="book_infos">
-                <h4 @click="commonRouterHandler(data.title_ka)">{{ data.title_ka }}</h4>
+                <h4 @click="commonRouterHandler(data.title_ka)">
+                  {{ data.title_ka }}
+                </h4>
                 <div class="book_text_wrapper">
                   <div class v-html="data.text_ka"></div>
                 </div>

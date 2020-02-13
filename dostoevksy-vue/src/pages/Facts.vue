@@ -8,7 +8,7 @@
         </div>
 
         <div class="fact_nd_tittle" v-if="title">
-          <h2 id="top">{{ title }}</h2>
+          <h2 id="top">საინტერესო ფაქტები</h2>
           <div style="display:inline-block">
             <kinesis-container>
               <kinesis-element :strength="10" type="depth_inv" :distance="120">
@@ -24,7 +24,14 @@
           </div>
         </div>
         <div class="facts_text_wrapper" v-if="factTrue">
-          <div class="facts_nd_main_text" v-for="list in collection" :key="list.id">
+          <div
+            class="facts_nd_main_text"
+            v-for="list in collection"
+            :key="list.id"
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+          >
             <div class="facts_decor_top">
               <img src="../assets/images/orn_red.png" />
             </div>
@@ -51,7 +58,9 @@
                 @click.prevent="setPage(p)"
                 :key="index"
                 ref="pagButton"
-              >{{ p }}</button>
+              >
+                {{ p }}
+              </button>
             </a>
           </div>
         </div>
@@ -82,7 +91,10 @@
         <div class="shelf"></div>
       </div>
     </div>
-    <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
+    <appCommonPhrazes
+      v-if="BottomPhrazhes"
+      :PhrazhesData="BottomPhrazhes.title_ka"
+    ></appCommonPhrazes>
   </div>
 </template>
 
@@ -96,7 +108,7 @@ export default {
   data() {
     return {
       data: [],
-      perPage: 3,
+      perPage: 4,
       pagination: {},
       currentpage: this.$route.query.currentpage,
       factTrue: false,

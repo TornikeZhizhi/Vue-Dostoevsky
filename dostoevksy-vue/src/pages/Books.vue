@@ -1,15 +1,28 @@
 <template>
   <div>
-    <div class="container-fluid page-section only_books common_fade" v-if="BooksData">
+    <div
+      class="container-fluid page-section only_books common_fade"
+      v-if="BooksData"
+    >
       <div class="container">
         <div class="row">
           <div class="col-md-12 book_col">
-            <h3 class="text-center">{{ title }}</h3>
+            <h3
+              class="text-center"
+              data-aos="fade-up"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+            >
+              <router-link to="/books" tag="a">წიგნები</router-link>
+            </h3>
             <div class="row book_box_row">
               <div
                 class="col-lg-3 col-md-6 d-flex justify-content-center"
                 v-for="data in BooksData"
                 :key="data.id"
+                data-aos="fade-up"
+                data-aos-delay="50"
+                data-aos-duration="1000"
               >
                 <ul class="align">
                   <li>
@@ -50,7 +63,9 @@
                 </ul>
 
                 <div class="book_infos">
-                  <h4 @click="commonRouterHandler(data.title_ka)">{{ data.title_ka }}</h4>
+                  <h4 @click="commonRouterHandler(data.title_ka)">
+                    {{ data.title_ka }}
+                  </h4>
                   <div class="book_text_wrapper">
                     <div v-html="data.text_ka"></div>
                   </div>
@@ -94,7 +109,10 @@
         <div class="shelf"></div>
       </div>
     </div>
-    <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
+    <appCommonPhrazes
+      v-if="BottomPhrazhes"
+      :PhrazhesData="BottomPhrazhes.title_ka"
+    ></appCommonPhrazes>
   </div>
 </template>
 

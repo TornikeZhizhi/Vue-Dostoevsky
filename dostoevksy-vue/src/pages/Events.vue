@@ -8,9 +8,16 @@
         <!-- // background-image -->
 
         <div class="event_tittle">
-          <h2>{{ title }}</h2>
+          <h2>ღონისძიებები</h2>
         </div>
-        <div class="events_nd_main_wrapper" v-for="data in eventData" :key="data.id">
+        <div
+          class="events_nd_main_wrapper"
+          v-for="data in eventData"
+          :key="data.id"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+        >
           <div class="event_img">
             <img :src="data.image" />
           </div>
@@ -50,7 +57,10 @@
         <div class="shelf"></div>
       </div>
     </div>
-    <appCommonPhrazes v-if="BottomPhrazhes" :PhrazhesData="BottomPhrazhes.title_ka"></appCommonPhrazes>
+    <appCommonPhrazes
+      v-if="BottomPhrazhes"
+      :PhrazhesData="BottomPhrazhes.title_ka"
+    ></appCommonPhrazes>
   </div>
 </template>
 
